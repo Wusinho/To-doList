@@ -9,7 +9,7 @@ const router = (route) => {
   content.innerHTML = "";
 
   switch (route) {
-    case "#/": {
+    case "": {
       return content.appendChild(Home());
     }
     case "#/posts": {

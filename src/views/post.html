@@ -1,5 +1,5 @@
-<div class="card border-0 post">
-  <form class="p-4">
+<div class="border-0 post mt-4">
+  <form class="container" id="task-form">
     <div class="form-group row">
       <label for="example-text-input" class="col-2">Task</label>
       <div class="col-10">
@@ -7,7 +7,7 @@
           class="form-control"
           type="text"
           value="Buying Groceries"
-          id="example-text-input"
+          id="chore"
         />
       </div>
     </div>
@@ -15,19 +15,14 @@
     <div class="form-group row">
       <label for="example-date-input" class="col-2">Date</label>
       <div class="col-10">
-        <input
-          class="form-control"
-          type="date"
-          value="2021-05-19"
-          id="example-date-input"
-        />
+        <input class="form-control" type="date" value="2021-05-19" id="date" />
       </div>
     </div>
 
     <div class="form-group row">
       <label for="example-date-input" class="col-2">Value</label>
       <div class="col-10">
-        <select class="custom-select form-control">
+        <select class="custom-select form-control" id="value">
           <option value="1">Normal</option>
           <option value="2">Very Important</option>
         </select>
