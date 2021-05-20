@@ -6,14 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <div class="navbar-nav">
-        <a class="nav-link active" href="#/">Home </a>
-        <a class="nav-link" href="#/posts">Posts</a>
-        <a class="nav-link" href="#/about">About</a>
-      </div>
-    </nav>
+  <body class="d-flex">
+    <div
+      class="d-flex flex-column flex-shrink-0 p-3 text-white bg-dark"
+      style="width: 280px"
+    >
+      <ul class="nav nav-pills flex-column mb-auto">
+        <a href="#/" class="nav-link active" aria-current="page"> Home </a>
+        <a href="#/posts" class="nav-link text-white"> Add Task </a>
+        <a href="#/about" class="nav-link text-white"> About </a>
+      </ul>
+    </div>
     <section id="root"></section>
   </body>
 </html>
