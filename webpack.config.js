@@ -15,6 +15,21 @@ const config = {
         use: ["style-loader", "css-loader"],
       },
       {
+        test: /\.s[ac]ss$/i,
+        use: [
+          // Creates `style` nodes from JS strings
+          "style-loader",
+          // Translates CSS into CommonJS
+          "css-loader",
+          // Compiles Sass to CSS
+          "sass-loader",
+        ],
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+      },
+      {
         test: /\.svg$/,
         use: "file-loader",
       },
@@ -33,8 +48,9 @@ const config = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      appMountId: "app",
-      filename: "index.html",
+      //   appMountId: "app",
+      //   filename: "index.html",
+      template: "./src/index.html",
     }),
   ],
 };
