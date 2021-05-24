@@ -14,15 +14,15 @@ const config = {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      {
-        watch: {
-          test: "{src,test}/*.js",
-        },
-        scripts: {
-          test: "tape test/*.js",
-          watch: "npm-watch",
-        },
-      },
+      // {
+      //   watch: {
+      //     test: "{src,test}/*.js",
+      //   },
+      //   scripts: {
+      //     test: "tape test/*.js",
+      //     watch: "npm-watch",
+      //   },
+      // },
       {
         test: /\.s[ac]ss$/i,
         use: [
