@@ -1,23 +1,16 @@
-import Home from "../modules/home";
-import Post from "../modules/post";
-import About from "../modules/about";
+import add_tasks from "../modules/add_tasks";
+import Add_job from "../modules/add_job";
+
 import Error404 from "../modules/error404";
 
-let content = document.getElementById("root");
+let content = document.getElementById("navbar");
 
 const router = (route) => {
   content.innerHTML = "";
 
   switch (route) {
     case "": {
-      return content.appendChild(Home());
-    }
-    case "#/posts": {
-      return content.appendChild(Post());
-    }
-
-    case "#/about": {
-      return content.appendChild(About());
+      return content.appendChild(Add_job());
     }
     default: {
       return content.appendChild(Error404());

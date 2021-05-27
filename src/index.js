@@ -1,70 +1,74 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
 import router from "./routes/route";
+import bodyView from "./modules/body";
+
 router(window.location.hash);
 window.addEventListener("hashchange", () => {
   router(window.location.hash);
 });
 
-class Task {
-  constructor(chore, date, importace) {
-    this.chore = chore;
-    this.date = date;
-    this.importace = importace;
+const getRoot = document.getElementById("root");
+getRoot.appendChild(bodyView());
+
+class Job {
+  constructor(job) {
+    this.job = job;
   }
 }
 
 class Store {
-  static getTasks() {
-    let tasks;
-    if (localStorage.getItem("tasks") === null) {
-      tasks = [];
+  static getJobs() {
+    let jobs;
+    if (localStorage.getItem("jobs") === null) {
+      jobs = [];
     } else {
-      tasks = JSON.parse(localStorage.getItem("tasks"));
+      jobs = JSON.parse(localStorage.getItem("jobs"));
     }
-    return tasks;
+    return jobs;
   }
 
-  static addTask(task) {
-    const tasks = Store.getTasks();
-    tasks.push(task);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
+  static addJob(job) {
+    const jobs = Store.getJobs();
+    jobs.push(job);
+
+    localStorage.setItem("jobs", JSON.stringify(jobs));
   }
 }
 
 class UI {
-  static displayTasks() {
-    const tasks = Store.getTasks();
-    tasks.forEach((task) => UI.addTaskToLibrary(task));
+  static displayJobs() {
+    const jobs = Store.getJobs();
+    jobs.forEach((task) => UI.addTaskToLibrary(task));
   }
 
   static addTaskToLibrary(task) {
-    const list = document.getElementById("contenedor");
-    const row = document.createElement("ul");
+    const list = document.getElementById("sidebar");
+    console.log(list);
+    const row = document.createElement("div");
 
-    row.innerHTML = `
-          <li class="has-text-centered">${task.chore} ${task.date} ${task.importace}</li>
-      `;
+    row.innerHTML = `${task.job} `;
+
     list.appendChild(row);
   }
-  static clearFields() {
-    document.querySelector("#chore").value = "Buying Groceries";
+  static clearField() {
+    return (document.getElementById("job").value = "");
   }
 }
-document.addEventListener("DOMContentLoaded", UI.displayTasks);
 
-document.getElementById("task-form").addEventListener("submit", (e) => {
-  const chore = document.getElementById("chore").value;
-  const date = document.getElementById("date").value;
-  const importance = document.getElementById("importance").value;
-
-  if (chore && importance) {
-    const task = new Task(chore, date, importance);
-    UI.addTaskToLibrary(task);
-    Store.addTask(task);
-    UI.clearFields();
+document.getElementById("job-form").addEventListener("submit", (e) => {
+  const add_job = document.getElementById("job").value;
+  // console.log(add_job);
+  if (add_job) {
+    const job = new Job(add_job);
+    UI.addTaskToLibrary(job);
+    UI.clearField();
+    Store.addJob(job);
   }
 
-  console.log(chore);
   e.preventDefault();
 });
+
+document.addEventListener("DOMContentLoaded", UI.displayJobs);
+
+// localStorage.clear();

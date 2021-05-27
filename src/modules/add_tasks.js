@@ -1,7 +1,8 @@
-import views from "../views/home.html";
+import views from "../views/add_tasks.html";
 
 export default () => {
   const divElement = document.createElement("div");
   divElement.innerHTML = views;
+
   return divElement;
 };

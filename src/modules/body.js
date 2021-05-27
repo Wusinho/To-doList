@@ -1,4 +1,4 @@
-import views from "../views/post.html";
+import views from "../views/body.html";
 
 export default () => {
   const divElement = document.createElement("div");
