@@ -8,6 +8,7 @@ import addJob from "./modules/add_job";
 // window.addEventListener("hashchange", () => {
 //   router(window.location.hash);
 // });
+let counter = 0;
 
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
@@ -46,10 +47,11 @@ class UI {
   }
 
   static addTaskToLibrary(task) {
+    counter++;
     const list = document.getElementById("sidebar");
 
     const row = document.createElement("a");
-    row.className = "list-group-item list-group-item-action";
+    row.className = `list-group-item list-group-item-action ${counter}`;
     row.innerHTML = `${task.job} `;
 
     list.appendChild(row);
