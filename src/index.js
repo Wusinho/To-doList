@@ -47,9 +47,9 @@ class UI {
 
   static addTaskToLibrary(task) {
     const list = document.getElementById("sidebar");
-    console.log(list);
-    const row = document.createElement("div");
 
+    const row = document.createElement("a");
+    row.className = "list-group-item list-group-item-action";
     row.innerHTML = `${task.job} `;
 
     list.appendChild(row);
