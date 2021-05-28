@@ -1,8 +1,8 @@
-import views from "../views/body.html";
+import views from '../views/body.html';
 
 export default () => {
-  const divElement = document.createElement("div");
-  divElement.className = "row";
+  const divElement = document.createElement('div');
+  divElement.className = 'row';
   divElement.innerHTML = views;
 
   return divElement;

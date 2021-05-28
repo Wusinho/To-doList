@@ -1,7 +1,7 @@
-import views from "../views/navbar.html";
+import views from '../views/navbar.html';
 
 export default () => {
-  const divElement = document.createElement("div");
+  const divElement = document.createElement('div');
 
   divElement.innerHTML = views;
 
