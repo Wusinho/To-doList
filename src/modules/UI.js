@@ -7,6 +7,7 @@ class UI {
   }
   static displayTasks() {
     const jobs = Store.getJobs();
+
     jobs.forEach((task) => UI.addTaskToMenu(task));
   }
 
@@ -26,7 +27,7 @@ class UI {
     const row = document.createElement("li");
     row.className = `list-group-item `;
     row.id = "menu-li";
-    row.innerHTML = `${task.task[0].chore}  ${task.task[0].date} ${task.task[0].importance} `;
+    row.innerHTML = `${task.chore}  ${task.date} ${task.importance} `;
     list.appendChild(row);
   }
 
