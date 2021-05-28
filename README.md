@@ -1,21 +1,22 @@
-# Restaurant-JS
+# Todo-List
 
 ## About
 
-This is a restaurant page coded using JavaScript to generate the entire contents of the website. The scope of this project is a deeper understanding of Webpack and DOM manipulation with JS.
+This project is a Todo-List where you can create a new Project and inside this project, you can create a task, the task contains a title, description, due date, and priority.
 
-![screenshot](./src/assets/Restaurant-JS.png)
+This project was created using the concepts of Single Responsibility, factory functions and, the Module Pattern.
+
+![screenshot](./src/assets/Todo.png)
 
 ## Live View
-
-[Live View](https://rawcdn.githack.com/Wusinho/Restaurant-JS/3036c1af5021332b28b47cc088bd978265ebd657/dist/index.html)
 
 ## Built with
 
 - HTML
-- CSS
 - Bootstrap
 - JavaScript
+- Webpack
+- Package.json
 
 ## Getting started
 
@@ -32,7 +33,7 @@ Run the following comands in the terminal in the next order:
   $ cd "here comes the path of your selected directory (double quotes must not be here)"
 
 - Step 2:
-  $ git clone https://github.com/Wusinho/Restaurant-JS.git
+  $ git clone https://github.com/Wusinho/To-doList.git
 
 ### To run this project in your local environment
 
@@ -53,7 +54,7 @@ Run the following comands in the terminal in the next order:
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/Wusinho/Restaurant-JS/issues).
+Feel free to check the [issues page](https://github.com/Wusinho/To-doList).
 
 ## Acknowledgments
 
