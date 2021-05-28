@@ -2,22 +2,26 @@
 body {
   height: 100vh;
 }
+
 #job-form {
   background-color: grey;
-  width: 100vw
+  width: 100vw;
 }
 
 #sidebar {
   background-color: lightgrey;
   height: 100vh;
 }
+
 #menu {
   background-color: rgb(194, 192, 192);
   height: 100vh;
 }
+
 #task-form {
   display: none;
 }
+
 .list-group-item {
   width: 100%;
 }
