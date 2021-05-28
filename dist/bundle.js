@@ -26,7 +26,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \****************************************************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n  height: 100vh; }\\n\\n#job-form {\\n  width: 100vh;\\n  background-color: grey; }\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-dolist/./src/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../node_modules/css-loader/dist/runtime/api.js */ \"./node_modules/css-loader/dist/runtime/api.js\");\n/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});\n// Module\n___CSS_LOADER_EXPORT___.push([module.id, \"body {\\n  height: 100vh; }\\n\\n#job-form {\\n  width: 100vw;\\n  background-color: grey; }\\n\\n#sidebar {\\n  background-color: lightgrey;\\n  height: 100vh;\\n  width: 30%; }\\n\\n#task-form {\\n  display: none; }\\n\", \"\"]);\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);\n\n\n//# sourceURL=webpack://to-dolist/./src/main.scss?./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js");
 
 /***/ }),
 
@@ -40,53 +40,23 @@ eval("\n\n/*\n  MIT License http://www.opensource.org/licenses/mit-license.php\n
 
 /***/ }),
 
-/***/ "./src/views/add_job.html":
-/*!********************************!*\
-  !*** ./src/views/add_job.html ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<form id=\\\"job-form\\\" class=\\\"px-4\\\">\\n  <label>\\n    <input\\n      class=\\\"form-control\\\"\\n      type=\\\"text\\\"\\n      placeholder=\\\"Build a tree house\\\"\\n      id=\\\"job\\\"\\n    />\\n  </label>\\n  <button type=\\\"submit\\\" class=\\\"btn btn-success my-4 col-2\\\">Submit</button>\\n</form>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://to-dolist/./src/views/add_job.html?");
-
-/***/ }),
-
-/***/ "./src/views/add_tasks.html":
-/*!**********************************!*\
-  !*** ./src/views/add_tasks.html ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<div class=\\\"border-0 post mt-4\\\">\\n  <form class=\\\"container\\\" id=\\\"task-form\\\">\\n    <div class=\\\"form-group row\\\">\\n      <label for=\\\"example-text-input\\\" class=\\\"col-2\\\">Task</label>\\n      <div class=\\\"col-10\\\">\\n        <input\\n          class=\\\"form-control\\\"\\n          type=\\\"text\\\"\\n          placeholder=\\\"Buying Groceries\\\"\\n          id=\\\"chore\\\"\\n        />\\n      </div>\\n    </div>\\n\\n    <div class=\\\"form-group row\\\">\\n      <label for=\\\"example-date-input\\\" class=\\\"col-2\\\">Date</label>\\n      <div class=\\\"col-10\\\">\\n        <input class=\\\"form-control\\\" type=\\\"date\\\" value=\\\"2021-05-19\\\" id=\\\"date\\\" />\\n      </div>\\n    </div>\\n\\n    <div class=\\\"form-group row\\\">\\n      <label for=\\\"example-date-input\\\" class=\\\"col-2\\\">Value</label>\\n      <div class=\\\"col-10\\\">\\n        <select class=\\\"custom-select form-control\\\" id=\\\"importance\\\">\\n          <option value=\\\"Normal\\\">Normal</option>\\n          <option value=\\\"Very Important\\\">Very Important</option>\\n        </select>\\n      </div>\\n    </div>\\n    <button type=\\\"submit\\\" class=\\\"btn btn-success my-4\\\">Submit</button>\\n  </form>\\n</div>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://to-dolist/./src/views/add_tasks.html?");
-
-/***/ }),
-
 /***/ "./src/views/body.html":
 /*!*****************************!*\
   !*** ./src/views/body.html ***!
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<div id=\\\"showContainer\\\">\\n  <div class=\\\"row\\\">\\n    <div class=\\\"col-4 sidebar\\\"></div>\\n    <div class=\\\"col-8 menu\\\"></div>\\n  </div>\\n</div>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://to-dolist/./src/views/body.html?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<ul class=\\\"col-4 list-group p-0\\\" id=\\\"sidebar\\\"></ul>\\n\\n<div class=\\\"col-8\\\" id=\\\"menu\\\">\\n  <form id=\\\"task-form\\\" class=\\\"border-0 post mt-4\\\">\\n    <div class=\\\"form-group row\\\">\\n      <label for=\\\"example-text-input\\\" class=\\\"col-2\\\">Task</label>\\n      <div class=\\\"col-10\\\">\\n        <input\\n          class=\\\"form-control col-10\\\"\\n          type=\\\"text\\\"\\n          placeholder=\\\"Buying Groceries\\\"\\n          id=\\\"chore\\\"\\n        />\\n      </div>\\n    </div>\\n\\n    <div class=\\\"form-group row\\\">\\n      <label for=\\\"example-date-input\\\" class=\\\"col-2\\\">Date</label>\\n      <div class=\\\"col-10\\\">\\n        <input class=\\\"form-control\\\" type=\\\"date\\\" id=\\\"date\\\" />\\n      </div>\\n    </div>\\n\\n    <div class=\\\"form-group row\\\">\\n      <label for=\\\"example-date-input\\\" class=\\\"col-2\\\">Value</label>\\n      <div class=\\\"col-10\\\">\\n        <select class=\\\"custom-select form-control\\\" id=\\\"importance\\\">\\n          <option value=\\\"Normal\\\">Normal</option>\\n          <option value=\\\"Very Important\\\">Very Important</option>\\n        </select>\\n      </div>\\n    </div>\\n    <button type=\\\"submit\\\" class=\\\"btn btn-success my-4\\\">Submit</button>\\n  </form>\\n\\n  <ul id=\\\"list-details\\\"></ul>\\n</div>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://to-dolist/./src/views/body.html?");
 
 /***/ }),
 
-/***/ "./src/views/error404.html":
-/*!*********************************!*\
-  !*** ./src/views/error404.html ***!
-  \*********************************/
+/***/ "./src/views/navbar.html":
+/*!*******************************!*\
+  !*** ./src/views/navbar.html ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/html-loader/dist/runtime/getUrl.js */ \"./node_modules/html-loader/dist/runtime/getUrl.js\");\n/* harmony import */ var _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0__);\n// Imports\n\nvar ___HTML_LOADER_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/food.jpg */ \"./src/assets/food.jpg\"), __webpack_require__.b);\n// Module\nvar ___HTML_LOADER_REPLACEMENT_0___ = _node_modules_html_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_0___default()(___HTML_LOADER_IMPORT_0___);\nvar code = \"<div class=\\\"card text-white border-0\\\">\\n  <img src=\\\"\" + ___HTML_LOADER_REPLACEMENT_0___ + \"\\\" class=\\\"card-img\\\" alt=\\\"...\\\" />\\n  <div class=\\\"jumbotron jumbotron-fluid card-img-overlay\\\">\\n    <div class=\\\"container\\\">\\n      <h1 class=\\\"display-4\\\">Error 4041</h1>\\n    </div>\\n  </div>\\n</div>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://to-dolist/./src/views/error404.html?");
-
-/***/ }),
-
-/***/ "./node_modules/html-loader/dist/runtime/getUrl.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/html-loader/dist/runtime/getUrl.js ***!
-  \*********************************************************/
-/***/ ((module) => {
-
-eval("\n\nmodule.exports = function (url, options) {\n  if (!options) {\n    // eslint-disable-next-line no-param-reassign\n    options = {};\n  }\n\n  if (!url) {\n    return url;\n  } // eslint-disable-next-line no-underscore-dangle, no-param-reassign\n\n\n  url = String(url.__esModule ? url.default : url);\n\n  if (options.hash) {\n    // eslint-disable-next-line no-param-reassign\n    url += options.hash;\n  }\n\n  if (options.maybeNeedQuotes && /[\\t\\n\\f\\r \"'=<>`]/.test(url)) {\n    return \"\\\"\".concat(url, \"\\\"\");\n  }\n\n  return url;\n};\n\n//# sourceURL=webpack://to-dolist/./node_modules/html-loader/dist/runtime/getUrl.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n// Module\nvar code = \"<form id=\\\"job-form\\\" class=\\\"px-4\\\">\\n  <label>\\n    <input\\n      class=\\\"form-control\\\"\\n      type=\\\"text\\\"\\n      placeholder=\\\"Build a tree house\\\"\\n      id=\\\"job\\\"\\n    />\\n  </label>\\n  <button type=\\\"submit\\\" class=\\\"btn btn-success my-4 col-2\\\">Submit</button>\\n</form>\\n\";\n// Exports\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (code);\n\n//# sourceURL=webpack://to-dolist/./src/views/navbar.html?");
 
 /***/ }),
 
@@ -120,43 +90,13 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 
 /***/ }),
 
-/***/ "./src/assets/food.jpg":
-/*!*****************************!*\
-  !*** ./src/assets/food.jpg ***!
-  \*****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("module.exports = __webpack_require__.p + \"94a4362ceadaddb80bb2.jpg\";\n\n//# sourceURL=webpack://to-dolist/./src/assets/food.jpg?");
-
-/***/ }),
-
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.scss */ \"./src/main.scss\");\n/* harmony import */ var _routes_route__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./routes/route */ \"./src/routes/route.js\");\n/* harmony import */ var _modules_body__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/body */ \"./src/modules/body.js\");\n\n\n\n\n\n(0,_routes_route__WEBPACK_IMPORTED_MODULE_2__.default)(window.location.hash);\nwindow.addEventListener(\"hashchange\", () => {\n  (0,_routes_route__WEBPACK_IMPORTED_MODULE_2__.default)(window.location.hash);\n});\n\nconst getRoot = document.getElementById(\"root\");\ngetRoot.appendChild((0,_modules_body__WEBPACK_IMPORTED_MODULE_3__.default)());\n\nclass Job {\n  constructor(job) {\n    this.job = job;\n  }\n}\n\nclass Store {\n  static getJobs() {\n    let jobs;\n    if (localStorage.getItem(\"jobs\") === null) {\n      jobs = [];\n    } else {\n      jobs = JSON.parse(localStorage.getItem(\"jobs\"));\n    }\n    return jobs;\n  }\n\n  // static addTask(task) {\n  //   const tasks = Store.getTasks();\n  //   tasks.push(task);\n\n  //   localStorage.setItem(\"tasks\", JSON.stringify(tasks));\n  // }\n\n  static addJob(job) {\n    const jobs = Store.getJobs();\n    jobs.push(job);\n\n    localStorage.setItem(\"jobs\", JSON.stringify(jobs));\n  }\n}\n\nclass UI {\n  static displayJobs() {\n    const jobs = Store.getJobs();\n    jobs.forEach((task) => UI.addTaskToLibrary(task));\n  }\n\n  static addTaskToLibrary(task) {\n    const list = document.getElementById(\"sidebar\");\n    const row = document.createElement(\"div\");\n\n    row.innerHTML = `${task.job} `;\n    // row.className = \"nav-link\";\n    // row.idName = `${task.job} `;\n    // row.setAttribute(\"role\", \"link\");\n    list.appendChild(row);\n  }\n  static clearField() {\n    return (document.getElementById(\"job\").value = \"\");\n  }\n}\n\ndocument.getElementById(\"job-form\").addEventListener(\"submit\", (e) => {\n  const add_job = document.getElementById(\"job\").value;\n  console.log(add_job);\n  if (add_job) {\n    const job = new Job(add_job);\n    UI.addTaskToLibrary(job);\n    UI.clearField();\n    Store.addJob(job);\n  }\n\n  e.preventDefault();\n});\n\ndocument.addEventListener(\"DOMContentLoaded\", UI.displayJobs);\n\n// localStorage.clear();\n\n\n//# sourceURL=webpack://to-dolist/./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/modules/add_job.js":
-/*!********************************!*\
-  !*** ./src/modules/add_job.js ***!
-  \********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _views_add_job_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/add_job.html */ \"./src/views/add_job.html\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const divElement = document.createElement(\"div\");\n  divElement.innerHTML = _views_add_job_html__WEBPACK_IMPORTED_MODULE_0__.default;\n\n  return divElement;\n});\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/add_job.js?");
-
-/***/ }),
-
-/***/ "./src/modules/add_tasks.js":
-/*!**********************************!*\
-  !*** ./src/modules/add_tasks.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _views_add_tasks_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/add_tasks.html */ \"./src/views/add_tasks.html\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const divElement = document.createElement(\"div\");\n  divElement.innerHTML = _views_add_tasks_html__WEBPACK_IMPORTED_MODULE_0__.default;\n\n  return divElement;\n});\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/add_tasks.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var bootstrap_dist_css_bootstrap_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! bootstrap/dist/css/bootstrap.min.css */ \"./node_modules/bootstrap/dist/css/bootstrap.min.css\");\n/* harmony import */ var _main_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./main.scss */ \"./src/main.scss\");\n/* harmony import */ var _modules_body__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/body */ \"./src/modules/body.js\");\n/* harmony import */ var _modules_navbar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/navbar */ \"./src/modules/navbar.js\");\n/* harmony import */ var _modules_job__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./modules/job */ \"./src/modules/job.js\");\n\n\n// import router from \"./routes/route\";\n\n\n\n// import addTask from \"./modules/add_tasks\";\n\n// router(window.location.hash);\n// window.addEventListener(\"hashchange\", () => {\n//   router(window.location.hash);\n// });\n\n// const getRoot = document.getElementById(\"root\");\n// const getNavbar = document.getElementById(\"navbar\");\n\n// getRoot.appendChild(bodyView());\n// getNavbar.appendChild(addJob());\n\n// class Chore {\n//   constructor(chore, date, importance) {\n//     this.chore = chore;\n//     this.date = date;\n//     this.importance = importance;\n//   }\n// }\n// class Store {\n//   static getJobs() {\n//     let jobs;\n//     if (localStorage.getItem(\"jobs\") === null) {\n//       jobs = [];\n//     } else {\n//       jobs = JSON.parse(localStorage.getItem(\"jobs\"));\n//       // console.log((jobs[10].id = 100));\n//       // console.log(jobs[10]);\n//     }\n//     return jobs;\n//   }\n\n//   static addJob(job) {\n//     const jobs = Store.getJobs();\n//     jobs.push(job);\n\n//     localStorage.setItem(\"jobs\", JSON.stringify(jobs));\n//   }\n// }\n// // console.log(Store.getJobs()[0]);\n\n// class UI {\n//   static displayJobs() {\n//     const jobs = Store.getJobs();\n//     jobs.forEach((task) => UI.addTaskToLibrary(task));\n//   }\n\n//   static addTaskToLibrary(task) {\n//     const list = document.getElementById(\"sidebar\");\n\n//     const row = document.createElement(\"li\");\n//     row.className = `list-group-item list-group-item-action`;\n//     row.innerHTML = `${task.job} `;\n//     row.id = `${task.id}`;\n//     list.appendChild(row);\n//   }\n//   static clearField() {\n//     return (document.getElementById(\"job\").value = \"\");\n//   }\n// }\n\n// document.getElementById(\"job-form\").addEventListener(\"submit\", (e) => {\n//   const add_job = document.getElementById(\"job\").value;\n\n//   if (add_job) {\n//     const job = new Job(add_job);\n//     UI.addTaskToLibrary(job);\n//     UI.clearField();\n//     Store.addJob(job);\n//   }\n\n//   e.preventDefault();\n// });\n\n// // document.addEventListener(\"DOMContentLoaded\", UI.displayJobs);\n\n// // localStorage.clear();\n\n// document.getElementById(\"sidebar\").addEventListener(\"click\", function (e) {\n//   let array = Store.getJobs();\n//   for (let index = 0; index < array.length; index++) {\n//     if (e.target.id == array[index].id) {\n//       const getFormTasks = document.getElementById(\"task-form\");\n//       getFormTasks.style.setProperty(\"display\", \"inline-block\");\n\n//       document.getElementById(\"task-form\").addEventListener(\"submit\", (e) => {\n//         const chore = document.getElementById(\"chore\").value;\n//         const date = document.getElementById(\"date\").value;\n//         const importance = document.getElementById(\"importance\").value;\n\n//         if (chore && date && importance) {\n//           const task = new Chore(chore, date, importance);\n//           UI.addChoresToLibrary(task);\n//           StoreInn.addChore(task);\n//           UI.clearChore();\n//           // array[index].push(task);\n//           console.log(array[index].date);\n//           console.log(array[index].id);\n//         }\n//       });\n//     }\n//   }\n// });\n\n\n//# sourceURL=webpack://to-dolist/./src/index.js?");
 
 /***/ }),
 
@@ -166,27 +106,27 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _views_body_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/body.html */ \"./src/views/body.html\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const divElement = document.createElement(\"div\");\n  divElement.innerHTML = _views_body_html__WEBPACK_IMPORTED_MODULE_0__.default;\n\n  return divElement;\n});\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/body.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _views_body_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/body.html */ \"./src/views/body.html\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  // const divElement = document.createElement(\"div\");\n  // divElement.innerHTML = views;\n\n  const getRoot = document.getElementById(\"root\");\n\n  getRoot.appendChild((0,_views_body_html__WEBPACK_IMPORTED_MODULE_0__.default)());\n\n  return getRoot;\n});\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/body.js?");
 
 /***/ }),
 
-/***/ "./src/modules/error404.js":
-/*!*********************************!*\
-  !*** ./src/modules/error404.js ***!
-  \*********************************/
+/***/ "./src/modules/job.js":
+/*!****************************!*\
+  !*** ./src/modules/job.js ***!
+  \****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _views_error404_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/error404.html */ \"./src/views/error404.html\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const divElement = document.createElement(\"div\");\n  divElement.innerHTML = _views_error404_html__WEBPACK_IMPORTED_MODULE_0__.default;\n  return divElement;\n});\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/error404.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\nclass Job {\n  constructor(job, chore, date, importance) {\n    let countconst = 0;\n    this._job = job;\n    this.id = job.slice(0, 2) + countconst;\n    this._chore = chore;\n    this._date = date;\n    this._importance = importance;\n  }\n\n  get job() {\n    return this._job;\n  }\n\n  get chore() {\n    return this._chore;\n  }\n\n  get date() {\n    return this._date;\n  }\n\n  get importance() {\n    return this._importance;\n  }\n\n  set job(job) {\n    this.job = job;\n  }\n\n  set chore(chore) {\n    this.chore = chore;\n  }\n\n  set date(date) {\n    this._date = date;\n  }\n\n  set importance(importance) {\n    this.importance = importance;\n  }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Job);\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/job.js?");
 
 /***/ }),
 
-/***/ "./src/routes/route.js":
-/*!*****************************!*\
-  !*** ./src/routes/route.js ***!
-  \*****************************/
+/***/ "./src/modules/navbar.js":
+/*!*******************************!*\
+  !*** ./src/modules/navbar.js ***!
+  \*******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _modules_add_tasks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../modules/add_tasks */ \"./src/modules/add_tasks.js\");\n/* harmony import */ var _modules_add_job__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../modules/add_job */ \"./src/modules/add_job.js\");\n/* harmony import */ var _modules_error404__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../modules/error404 */ \"./src/modules/error404.js\");\n\n\n\n\n\nlet content = document.getElementById(\"navbar\");\n\nconst router = (route) => {\n  content.innerHTML = \"\";\n\n  switch (route) {\n    case \"\": {\n      return content.appendChild((0,_modules_add_job__WEBPACK_IMPORTED_MODULE_1__.default)());\n    }\n    default: {\n      return content.appendChild((0,_modules_error404__WEBPACK_IMPORTED_MODULE_2__.default)());\n    }\n  }\n};\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (router);\n\n\n//# sourceURL=webpack://to-dolist/./src/routes/route.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _views_navbar_html__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../views/navbar.html */ \"./src/views/navbar.html\");\n\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (() => {\n  const divElement = document.createElement(\"div\");\n  divElement.innerHTML = _views_navbar_html__WEBPACK_IMPORTED_MODULE_0__.default;\n\n  return divElement;\n});\n\n\n//# sourceURL=webpack://to-dolist/./src/modules/navbar.js?");
 
 /***/ })
 
@@ -216,9 +156,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
-/******/ 	// expose the modules object (__webpack_modules__)
-/******/ 	__webpack_require__.m = __webpack_modules__;
-/******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
 /******/ 	(() => {
@@ -244,18 +181,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 		};
 /******/ 	})();
 /******/ 	
-/******/ 	/* webpack/runtime/global */
-/******/ 	(() => {
-/******/ 		__webpack_require__.g = (function() {
-/******/ 			if (typeof globalThis === 'object') return globalThis;
-/******/ 			try {
-/******/ 				return this || new Function('return this')();
-/******/ 			} catch (e) {
-/******/ 				if (typeof window === 'object') return window;
-/******/ 			}
-/******/ 		})();
-/******/ 	})();
-/******/ 	
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
@@ -270,52 +195,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /******/ 			}
 /******/ 			Object.defineProperty(exports, '__esModule', { value: true });
 /******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/publicPath */
-/******/ 	(() => {
-/******/ 		var scriptUrl;
-/******/ 		if (__webpack_require__.g.importScripts) scriptUrl = __webpack_require__.g.location + "";
-/******/ 		var document = __webpack_require__.g.document;
-/******/ 		if (!scriptUrl && document) {
-/******/ 			if (document.currentScript)
-/******/ 				scriptUrl = document.currentScript.src
-/******/ 			if (!scriptUrl) {
-/******/ 				var scripts = document.getElementsByTagName("script");
-/******/ 				if(scripts.length) scriptUrl = scripts[scripts.length - 1].src
-/******/ 			}
-/******/ 		}
-/******/ 		// When supporting browsers where an automatic publicPath is not supported you must specify an output.publicPath manually via configuration
-/******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
-/******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
-/******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl;
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/jsonp chunk loading */
-/******/ 	(() => {
-/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
-/******/ 		
-/******/ 		// object to store loaded and loading chunks
-/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
-/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
-/******/ 		var installedChunks = {
-/******/ 			"main": 0
-/******/ 		};
-/******/ 		
-/******/ 		// no chunk on demand loading
-/******/ 		
-/******/ 		// no prefetching
-/******/ 		
-/******/ 		// no preloaded
-/******/ 		
-/******/ 		// no HMR
-/******/ 		
-/******/ 		// no HMR manifest
-/******/ 		
-/******/ 		// no on chunks loaded
-/******/ 		
-/******/ 		// no jsonp function
 /******/ 	})();
 /******/ 	
 /************************************************************************/
