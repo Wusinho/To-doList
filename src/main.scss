@@ -1,29 +1,28 @@
 
-  body{
-      height:100vh
+  body {
+    height:100vh;
   }
 
-  #job-form{
+  #job-form {
     background-color: grey;
     width:100vw
   }
   
-  #sidebar{
+  #sidebar {
     background-color: lightgrey;
     height:100vh;
   }
 
-  #menu{
+  #menu {
     background-color: rgb(194, 192, 192);
     height:100vh;
   }
 
-  #task-form{
+  #task-form {
     display: none;
   }
-  .list-group-item{
-    width:100%
+
+  .list-group-item {
+    width:100%;
   }
-  #menu-li{
-    // display: none;
-  }
+  
