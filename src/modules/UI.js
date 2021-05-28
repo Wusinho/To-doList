@@ -24,9 +24,9 @@ class UI {
     const list = document.getElementById("menu-details");
 
     const row = document.createElement("li");
-    row.className = `list-group-item list-group-item-action`;
+    row.className = `list-group-item `;
     row.id = "menu-li";
-    row.innerHTML = `${task.chore} `;
+    row.innerHTML = `${task.task[0].chore}  ${task.task[0].date} ${task.task[0].importance} `;
     list.appendChild(row);
   }
 
