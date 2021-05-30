@@ -7,9 +7,8 @@ class UI {
     jobs.forEach((task) => UI.addTaskToLibrary(task));
   }
 
-  static displayTasks() {
-    const jobs = Store.getJobs();
-
+  static displayTasks(jobs) {
+    
     jobs.forEach((task) => UI.addTaskToMenu(task));
   }
 
@@ -24,11 +23,9 @@ class UI {
   }
 
   static addTaskToMenu(task) {
-    const list = document.getElementById("menu-details");
-
+    const list = document.getElementById('task-list');
     const row = document.createElement("li");
     row.className = "list-group-item ";
-    row.id = "menu-li";
     row.innerHTML = `${task.chore}  ${task.date} ${task.importance} `;
     list.appendChild(row);
   }

@@ -27,12 +27,14 @@ document.getElementById("job-form").addEventListener("submit", (e) => {
     UI.clearField();
   }
 
-  e.preventDefault();
 });
 
-document.getElementById('sidebar').addEventListener('click', (e) => {
+function refresh(){
+  window.location.reload("Refresh")
+}
+const iValue = localStorage.getItem(localStorage.key(1))
 
-  
+document.getElementById('sidebar').addEventListener('click', (e) => {
 
   for (let i = 0; i < array.length; i += 1) {
     if (e.target.id === array[i].id) {
@@ -41,10 +43,19 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
       getH1.innerText = `${e.target.innerText} Project`
       getFormTasks.style.setProperty('display', 'inline-block');
       localStorage.setItem('Finder', i);
+
+
+      UI.displayTasks(array[i].task)
+    
+
     }
+    e.preventDefault()
+
   }
-  e.preventDefault();
+
 });
+
+document.addEventListener("DOMContentLoaded", UI.displayJobs);
 
 
 document.getElementById('task-form').addEventListener('submit', (e) => {
@@ -54,13 +65,18 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
   if (chore && date && importance) {
     const task = new Task(chore, date, importance);
     Store.addTask(task, localStorage.getItem(localStorage.key(1)));
-    e.preventDefault();
+    
+
+
+
   }
 });
 
 
+// document.addEventListener("DOMContentLoaded", UI.displayTasks(array[iValue].task));
 
-document.addEventListener("DOMContentLoaded", UI.displayJobs);
+
+
 
 
 
