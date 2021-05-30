@@ -1,3 +1,4 @@
+/* eslint-disable */
 import Store from "./store";
 
 class UI {
@@ -36,4 +37,5 @@ class UI {
     document.getElementById("job").value = "";
   }
 }
+
 export default UI;
