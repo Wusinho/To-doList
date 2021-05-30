@@ -1,4 +1,4 @@
-/* no-plusplus */
+/* eslint-disable */
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
