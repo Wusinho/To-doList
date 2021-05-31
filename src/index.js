@@ -16,6 +16,17 @@ getNavbar.appendChild(navBar());
 getRoot.appendChild(bodyView());
 const array = Store.getJobs();
 
+const removeTask = (index) => {
+for (let i = 0; i < array.length; i++) {
+  const key = localStorage.key(0);
+  if (i == index){
+    console.log(JSON.parse(localStorage.getItem(key))[i]);
+    // console.log (i)
+    // console.log (index)
+  }
+}
+
+}
 
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addjob = document.getElementById("job").value;
@@ -32,8 +43,8 @@ document.getElementById("job-form").addEventListener("submit", (e) => {
 
 
 
-function deleteChild() { 
-  let e = document.getElementById("task-list"); 
+function deleteChild(ele) { 
+  let e = document.getElementById(ele); 
   
   let child = e.lastElementChild;  
   while (child) { 
@@ -41,9 +52,13 @@ function deleteChild() {
       child = e.lastElementChild; 
   } 
 } 
-function iValue(){
-  console.log(localStorage.getItem(localStorage.key(1)))
+
+const iValue = () => {
+
+  return localStorage.getItem(localStorage.key(1))
+
 }
+
 
 document.getElementById('sidebar').addEventListener('click', (e) => {
 
@@ -51,20 +66,28 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
     if (e.target.id === array[i].id) {
       const getFormTasks = document.getElementById('task-form');
       const getH1 = document.getElementById('h1')
-      getH1.innerText = `${e.target.innerText} Project`
+      
+      const getBtnDanger = document.getElementById('danger-group')
+      getBtnDanger.className = 'visible'
+      getH1.value = `${e.target.innerText} Project`
       getFormTasks.style.setProperty('display', 'inline-block');
       localStorage.setItem('Finder', i);
-
-      deleteChild()
-      UI.displayTasks(array[i].task)
-    
-
+      deleteChild("task-list")
+      UI.displayTasks(array[i].task)   
     }
     e.preventDefault()
-
   }
-
 });
+
+
+document.getElementById('danger-group').addEventListener('click', (e) => {
+
+  let index = parseInt(iValue())
+  removeTask(index)
+})
+
+
+
 
 
 

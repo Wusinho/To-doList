@@ -1,5 +1,5 @@
 /* eslint-disable */
-import jobView from "./job"
+import jobView from "../views/job.html"
 import Store from "./store";
 
 class UI {
@@ -22,6 +22,18 @@ class UI {
     row.id = `${task.id}`;
     list.appendChild(row);
   }
+
+
+
+  // static addTaskToLibrary(task) {
+  //   const list = document.getElementById("sidebar");
+  //   const row = document.createElement('div');
+  //   row.className = 'input-group';
+  //   row.innerHTML = jobView;
+  //   // row.innerHTML = `${task.job} `;
+  //   row.id = `${task.id}`;
+  //   list.appendChild(row);
+  // }
 
   static addTaskToMenu(task) {
     const list = document.getElementById('task-list');
