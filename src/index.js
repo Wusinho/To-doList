@@ -20,9 +20,11 @@ const removeTask = (index) => {
 for (let i = 0; i < array.length; i++) {
   const key = localStorage.key(0);
   if (i == index){
-    console.log(JSON.parse(localStorage.getItem(key))[i]);
-    // console.log (i)
-    // console.log (index)
+    
+    const arrayDelete = JSON.parse(localStorage.getItem(key))[i]
+    arrayDelete = new Task()
+    
+    
   }
 }
 
