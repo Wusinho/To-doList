@@ -29,10 +29,21 @@ document.getElementById("job-form").addEventListener("submit", (e) => {
 
 });
 
-function refresh(){
-  window.location.reload("Refresh")
+
+
+
+function deleteChild() { 
+  let e = document.getElementById("task-list"); 
+  
+  let child = e.lastElementChild;  
+  while (child) { 
+      e.removeChild(child); 
+      child = e.lastElementChild; 
+  } 
+} 
+function iValue(){
+  console.log(localStorage.getItem(localStorage.key(1)))
 }
-const iValue = localStorage.getItem(localStorage.key(1))
 
 document.getElementById('sidebar').addEventListener('click', (e) => {
 
@@ -44,7 +55,7 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
       getFormTasks.style.setProperty('display', 'inline-block');
       localStorage.setItem('Finder', i);
 
-
+      deleteChild()
       UI.displayTasks(array[i].task)
     
 
@@ -54,6 +65,9 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
   }
 
 });
+
+
+
 
 document.addEventListener("DOMContentLoaded", UI.displayJobs);
 
@@ -66,10 +80,8 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
     const task = new Task(chore, date, importance);
     Store.addTask(task, localStorage.getItem(localStorage.key(1)));
     
-
-
-
   }
+
 });
 
 

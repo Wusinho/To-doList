@@ -1,4 +1,5 @@
 /* eslint-disable */
+import jobView from "./job"
 import Store from "./store";
 
 class UI {
