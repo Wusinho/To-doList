@@ -100,44 +100,70 @@ document.addEventListener("DOMContentLoaded", UI.displayJobs());
 
  
 const afterInput = (e ) => {
+  console.log(e.target.value)
   localStorage.setItem(localStorage.getItem('+realName'), e.target.value);
   // e.preventDefault();
 }
 
 
 document.getElementById("task-list").addEventListener("click", (e) => {
-  const selectInput =  document.getElementById(e.target.id)
-  const realName = (e.target.id).slice(0,-1)
-
+  const eVal = e.target.id
+  const realName = (eVal).slice(0,-1)
+  const taskSelect = eVal.slice(-1)
   localStorage.setItem('+realName', realName)
-  const inputVariable = localStorage.getItem(realName)
-  if (inputVariable) {
-    console.log(selectInput)
-    document.getElementById(selectInput).value = inputVariable
-  }
 
-  document.getElementById(selectInput).addEventListener('input',afterInput)
+  const inputVariable = JSON.parse(localStorage.getItem(realName))
+
+  if(taskSelect == 'X') {
+(inputVariable[0].chore) = inputVariable
+    con
+    // document.getElementById(e.target.id).addEventListener('input',changeChore(realName, inputVariable))
+
+  } else if (taskSelect == '+') {
+(inputVariable[0].date) = inputVariable
+// document.getElementById(e.target.id).addEventListener('input', changeDate(realName, inputVariable))
+
+changeDate(realName, inputVariable)
+  } else if (taskSelect == '-'){
+(inputVariable[0].importance) = inputVariable
+// document.getElementById(e.target.id).addEventListener('input', changeImportance(realName, inputVariable))
+
+  }
+    
+  // if (inputVariable) {
+  //   document.getElementById(e.target.id).value = inputVariable
+  // }
+
 });
 
-
-// function afterInput (e){
-//   localStorage.setItem("qty", e.target.value)
-// }
-
-// function pageLoad(){
-
-//   const qty = localStorage.getItem("qty")
-
-//   if (qty) {
-//     document.getElementById("qty").value = qty
-//   }
+var changeChore = (name, newChore) =>{
+  var existing
+	var existing = localStorage.getItem(name);
+  existing = existing ? JSON.parse(existing) : {};
+	existing[0].chore = newChore
   
+	localStorage.setItem(name, JSON.stringify(existing));
+
+};
+
+var changeChore = (name, newDate) =>{
+  var existing
+	var existing = localStorage.getItem(name);
+  existing = existing ? JSON.parse(existing) : {};
+	existing[0].chore = newDate
   
-//   document.getElementById("qty").addEventListener("input", afterInput)
+	localStorage.setItem(name, JSON.stringify(existing));
 
-// }
-
-
+};
 
 
-// document.addEventListener("DOMContentLoaded" , pageLoad)
+var changeImportance = (name, newImportance) =>{
+  var existing
+	var existing = localStorage.getItem(name);
+  existing = existing ? JSON.parse(existing) : {};
+	existing[0].chore = newImportance
+  
+	localStorage.setItem(name, JSON.stringify(existing));
+
+};
+
