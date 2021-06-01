@@ -15,6 +15,8 @@ import iFinder from "./modules/iFinder"
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
 
+
+
 getNavbar.appendChild(navBar());
 getRoot.appendChild(bodyView());
 
@@ -29,20 +31,6 @@ document.getElementById("job-form").addEventListener("submit", (e) => {
     UI.clearField();
   }
 });
-
-
-
-
-
-// const iFinder = () => {
-
-// for (let i = 0; i < localStorage.length; i++) {
-//   const key = localStorage.key(i);
-//     if(key == '+Finder')
-//     return localStorage.getItem(key)
-// }
-
-// }
 
 
 document.getElementById('sidebar').addEventListener('click', (e) => {
@@ -60,23 +48,10 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
       localStorage.setItem('+Finder', e.target.innerText);
       deleteChild("task-list")
 
-let arr = []
-  for (let i = 0; i < localStorage.length; i++) {
-    const key= localStorage.key(i);
-    if (key == iFinder()) {
-        arr.push(JSON.parse(localStorage.getItem(key)));
-      for (let k = 0; k < arr[0].length; k++) {
-        for (let j = 0; j < localStorage.length; j++) {
-          const key2= localStorage.key(j);
-          if (key2 == arr[0][k]){
-           let task = (JSON.parse(localStorage.getItem(key2))[0]);
-            UI.addTaskToMenu(task, key2)
 
-          }
-        }
-      }
-    }
-}
+      UI.addTaskToGeneral(iFinder())
+
+
 
 
 });
@@ -111,6 +86,5 @@ document.getElementById("delete-key").addEventListener("click", (e) => {
 document.getElementById("task-list").addEventListener("click", (e) => {
   const deleteKey = e.target.id
   localStorage.removeItem(deleteKey)
-  location.reload();
 });
 document.addEventListener("DOMContentLoaded", UI.displayJobs());

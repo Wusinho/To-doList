@@ -28,7 +28,7 @@ class UI {
 
   static addTaskToMenu(task, id) {
     const list = document.getElementById('task-list');
-    const row = document.createElement("div");
+    const row = document.createElement("form");
     row.className = "input-group py-1";
 
     const input1 = document.createElement("input")
@@ -66,7 +66,27 @@ class UI {
   }
 
 
+static  addTaskToGeneral(finder){
 
+  let arr = []
+  for (let i = 0; i < localStorage.length; i++) {
+    const key= localStorage.key(i);
+    if (key == finder) {
+        arr.push(JSON.parse(localStorage.getItem(key)));
+      for (let k = 0; k < arr[0].length; k++) {
+        for (let j = 0; j < localStorage.length; j++) {
+          const key2= localStorage.key(j);
+          if (key2 == arr[0][k]){
+           let task = (JSON.parse(localStorage.getItem(key2))[0]);
+            UI.addTaskToMenu(task, key2)
+
+          }
+        }
+      }
+    }
+}
+
+}
 
 
 
