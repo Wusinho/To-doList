@@ -5,7 +5,7 @@
 This project is a Todo-List where you can create a new Project and you can create a task, the tasks which contains a title, date, and priority.
 You can add or delete projects and you can edit taks directly or delete them.
 
-![screenshot](./src/assets/Todo.png)
+![screenshot](./src/assets/Todo-list.png)
 
 ## Live View
 
@@ -41,7 +41,7 @@ Run the following comands in the terminal in the next order:
 
 - Step 2:
   npm run start
-  
+
 ## Authors
 
 👤 **Heber Lazo**
