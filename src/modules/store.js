@@ -2,22 +2,7 @@
 
 
 class Store {
-  static getJobs() {
-    let jobs;
-    if (localStorage.getItem('jobs') === null) {
-      jobs = [];
-    } else {
-      jobs = JSON.parse(localStorage.getItem('jobs'));
-    }
-    return jobs;
-  }
-
-  static addJob(job) {
-    const jobs = Store.getJobs();
-    jobs.push(job);
-
-    localStorage.setItem('jobs', JSON.stringify(jobs));
-  }
+ 
 
 static addInside(name,item) {
   let existing = localStorage.getItem(name);
