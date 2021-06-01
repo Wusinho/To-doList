@@ -30,19 +30,23 @@ class UI {
     const list = document.getElementById('task-list');
     const row = document.createElement("form");
     row.className = "input-group py-1";
+    
 
     const input1 = document.createElement("input")
     input1.className = "form-control"
     input1.value = task.chore
+    input1.id = id + 'X'
     row.appendChild(input1);
 
     const input2 = document.createElement("input")
     input2.type = 'date'
     input2.className = 'form-control'
     input2.value = task.date
+    input2.id = id + '+'
     row.appendChild(input2)
   
     const inputSelect = document.createElement("select")
+    inputSelect.id = id + '-'
     inputSelect.className = "custom-select form-control"
     const choosenSelect = document.createElement("option")
     choosenSelect.text = task.importance

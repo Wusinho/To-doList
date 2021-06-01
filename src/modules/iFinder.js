@@ -8,7 +8,7 @@ export default () => {
 
         for (let i = 0; i < localStorage.length; i++) {
           const key = localStorage.key(i);
-            if(key == '+Finder')
+            if(key == '+iFinder')
             return localStorage.getItem(key)
         }
         

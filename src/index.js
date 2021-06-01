@@ -21,8 +21,12 @@ getNavbar.appendChild(navBar());
 getRoot.appendChild(bodyView());
 
 
-localStorage.setItem('+Finder', 'Raul');
+localStorage.setItem('+iFinder', 'Raul');
 localStorage.setItem('+Counter', '0');
+
+
+
+
 
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addjob = document.getElementById("job").value;
@@ -45,13 +49,14 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
       getH1.value = `${e.target.innerText} Project`
 
 
-      localStorage.setItem('+Finder', e.target.innerText);
+      localStorage.setItem('+iFinder', e.target.innerText);
       deleteChild("task-list")
 
 
       UI.addTaskToGeneral(iFinder())
 
 
+      // addTask()
 
 
 });
@@ -74,11 +79,12 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
       Store.addInside(keyValue,task) 
       Store.addInside(iFinder(),keyValue)
   }
+
 });
 
 
 document.getElementById("delete-key").addEventListener("click", (e) => {
-    const deleteKey = localStorage.getItem('+Finder')
+    const deleteKey = localStorage.getItem('+iFinder')
   localStorage.removeItem(deleteKey)
   location.reload();
 });
@@ -88,3 +94,27 @@ document.getElementById("task-list").addEventListener("click", (e) => {
   localStorage.removeItem(deleteKey)
 });
 document.addEventListener("DOMContentLoaded", UI.displayJobs());
+
+
+
+
+ 
+const afterInput = (e ) => {
+  localStorage.setItem(localStorage.getItem('+realName'), e.target.value);
+  // e.preventDefault();
+}
+
+
+document.getElementById("task-list").addEventListener("click", (e) => {
+  const selectInput =  document.getElementById(e.target.id)
+  const realName = (e.target.id).slice(0,-1)
+
+  localStorage.setItem('+realName', realName)
+  const inputVariable = localStorage.getItem(realName)
+  if (inputVariable) {
+    console.log(selectInput)
+    document.getElementById(selectInput).value = inputVariable
+  }
+
+  // document.getElementById(selectInput).addEventListener('input',afterInput)
+});
