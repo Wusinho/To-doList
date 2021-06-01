@@ -116,5 +116,28 @@ document.getElementById("task-list").addEventListener("click", (e) => {
     document.getElementById(selectInput).value = inputVariable
   }
 
-  // document.getElementById(selectInput).addEventListener('input',afterInput)
+  document.getElementById(selectInput).addEventListener('input',afterInput)
 });
+
+
+// function afterInput (e){
+//   localStorage.setItem("qty", e.target.value)
+// }
+
+// function pageLoad(){
+
+//   const qty = localStorage.getItem("qty")
+
+//   if (qty) {
+//     document.getElementById("qty").value = qty
+//   }
+  
+  
+//   document.getElementById("qty").addEventListener("input", afterInput)
+
+// }
+
+
+
+
+// document.addEventListener("DOMContentLoaded" , pageLoad)
