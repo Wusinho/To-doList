@@ -7,9 +7,9 @@ You can add or delete projects and you can edit taks directly or delete them.
 
 ![screenshot](./src/assets/Todo-list.png)
 
-[Live View](https://60b6b4d8247bc000e6a3f21d--compassionate-hypatia-7f30a0.netlify.app/)
-
 ## Live View
+
+[Live View](https://60b6b4d8247bc000e6a3f21d--compassionate-hypatia-7f30a0.netlify.app/)
 
 ## Built with
 
