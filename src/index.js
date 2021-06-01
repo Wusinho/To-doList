@@ -4,12 +4,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
 import bodyView from "./modules/body";
 import navBar from "./modules/navbar";
-import Project from "./modules/project";
 import Task from "./modules/task";
 import Store from "./modules/store";
 import UI from "./modules/UI";
 import createKeys from "./modules/createKeys"
-import createTasks from "./modules/createTasks"
 import addCounter from "./modules/addCounter"
 
 const getRoot = document.getElementById("root");
@@ -24,12 +22,10 @@ localStorage.setItem('+Counter', '0');
 
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addjob = document.getElementById("job").value;
-
   if (addjob) {
     createKeys(addjob)
     UI.clearField();
   }
-
 });
 
 
@@ -60,10 +56,13 @@ document.getElementById('sidebar').addEventListener('click', (e) => {
       const getFormTasks = document.getElementById('task-form');
       const getH1 = document.getElementById('h1')
       const getBtnDanger = document.getElementById('danger-group')
+      
       getBtnDanger.className = 'd-flex'
       getFormTasks.className = 'visible'
-
+      
+      
       getH1.value = `${e.target.innerText} Project`
+
 
       localStorage.setItem('+Finder', e.target.innerText);
       deleteChild("task-list")
@@ -96,10 +95,8 @@ let arr = []
 
 
 document.getElementById('task-form').addEventListener('submit', (e) => {
- 
 
   let keyValue = '+'+ iFinder() +  addCounter()
-  
 
   const chore = document.getElementById('chore').value;
   const date = document.getElementById('date').value;
@@ -108,46 +105,19 @@ document.getElementById('task-form').addEventListener('submit', (e) => {
     const task = new Task(chore, date, importance);
       Store.addInside(keyValue,task) 
       Store.addInside(iFinder(),keyValue)
-
   }
-
 });
 
+
+document.getElementById("delete-key").addEventListener("click", (e) => {
+    const deleteKey = localStorage.getItem('+Finder')
+  localStorage.removeItem(deleteKey)
+  location.reload();
+});
+
+document.getElementById("task-list").addEventListener("click", (e) => {
+  const deleteKey = e.target.id
+  localStorage.removeItem(deleteKey)
+  location.reload();
+});
 document.addEventListener("DOMContentLoaded", UI.displayJobs());
-
-
-
-
-
-
-// var time = "01:32:29";
-// var array = time.split(":");
-// var seconds = (parseInt(array[0], 10) * 60 * 60) + (parseInt(array[1], 10) * 60) + parseInt(array[2], 10)
-
-// console.log(seconds);
-// document.addEventListener("DOMContentLoaded", UI.displayTasks(array[iFinder].task));
-
-
-// createKeys('Raul')
-
-
-// createTasks('Raul')
-// createTasks('Pedro')
-
-// const taskprueba = new Task('caballo', 'date', 'muy')
-
-
-// Store.addInside('Ra1',taskprueba) 
-
-// const loopLocalStorage = (arr) => {
-//   for (let i = 0; i < localStorage.length; i++) {
-//     const key = localStorage.key(i);
-//     if (key != '+Finder') {
-//      console.log(key);
-      
-//     }
-//   }
-
-// }
-
-// loopLocalStorage()

@@ -1,28 +1,15 @@
 /* eslint-disable */
-import jobView from "../views/job.html"
-import Store from "./store";
 
 class UI {
-  // static displayJobs() {
-  //   const jobs = Store.getJobs();
-  //   jobs.forEach((task) => UI.addTaskToLibrary(task));
-  // }
-
-  static displayTasks(jobs) {
-    
-    jobs.forEach((task) => UI.addTaskToMenu(task));
-  }
+ 
 
   static displayJobs() {
 
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
-   
           if (key[0] != '+') {
             UI.addTaskToLibrary(key); 
-          }   
-          
-      
+          }       
     }
   }
 
@@ -38,24 +25,61 @@ class UI {
 
 
 
-  // static addTaskToLibrary(task) {
-  //   const list = document.getElementById("sidebar");
-  //   const row = document.createElement('div');
-  //   row.className = 'input-group';
-  //   row.innerHTML = jobView;
-  //   // row.innerHTML = `${task.job} `;
-  //   row.id = `${task.id}`;
-  //   list.appendChild(row);
-  // }
 
   static addTaskToMenu(task, id) {
     const list = document.getElementById('task-list');
-    const row = document.createElement("li");
-    row.className = "list-group-item ";
-    row.innerHTML = `${task.chore}  ${task.date} ${task.importance} `;
-    row.id = id
+    const row = document.createElement("div");
+    row.className = "input-group py-1";
+
+    const input1 = document.createElement("input")
+    input1.className = "form-control"
+    input1.value = task.chore
+    row.appendChild(input1);
+
+    const input2 = document.createElement("input")
+    input2.type = 'date'
+    input2.className = 'form-control'
+    input2.value = task.date
+    row.appendChild(input2)
+  
+    const inputSelect = document.createElement("select")
+    inputSelect.className = "custom-select form-control"
+    const choosenSelect = document.createElement("option")
+    choosenSelect.text = task.importance
+    inputSelect.appendChild(choosenSelect)
+
+    const selectIF = document.createElement("option")
+
+    task.importance == 'Very Important' ? selectIF.text = 'Normal' :  selectIF.text = 'Very Important'
+  
+    inputSelect.appendChild(selectIF)
+
+    row.appendChild(inputSelect)
+    
+    const btnDelete = document.createElement('button')
+    btnDelete.className = 'btn btn-danger'
+    btnDelete.innerText = 'Delete'
+    btnDelete.id = id
+    row.appendChild(btnDelete)
+  
     list.appendChild(row);
   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   static clearField() {
     document.getElementById("job").value = "";
