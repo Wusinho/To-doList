@@ -40,7 +40,7 @@ Run the following comands in the terminal in the next order:
 
 - Step 2:
   npm run start
-
+  
 ## Authors
 
 👤 **Heber Lazo**
