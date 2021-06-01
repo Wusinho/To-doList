@@ -3,6 +3,7 @@
 ## About
 
 This project is a Todo-List where you can create a new Project and you can create a task, the tasks which contains a title, date, and priority.
+You can add or delete projects and you can edit taks directly or delete them.
 
 ![screenshot](./src/assets/Todo.png)
 
