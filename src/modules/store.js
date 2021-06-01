@@ -1,3 +1,6 @@
+/* eslint-disable */
+
+
 class Store {
   static getJobs() {
     let jobs;
@@ -15,6 +18,19 @@ class Store {
 
     localStorage.setItem('jobs', JSON.stringify(jobs));
   }
+
+static addInside(name,item) {
+  let existing = localStorage.getItem(name);
+  existing = existing ? JSON.parse(existing) : [];
+
+  existing.push(item)
+  
+  localStorage.setItem(name, JSON.stringify(existing));
+
+
+}
+
+
 
   static addTask(tasks, index) {
     const jobs = Store.getJobs();

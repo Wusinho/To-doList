@@ -8,35 +8,25 @@ import Project from "./modules/project";
 import Task from "./modules/task";
 import Store from "./modules/store";
 import UI from "./modules/UI";
+import createKeys from "./modules/createKeys"
+import createTasks from "./modules/createTasks"
+import addCounter from "./modules/addCounter"
 
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
 
 getNavbar.appendChild(navBar());
 getRoot.appendChild(bodyView());
-const array = Store.getJobs();
 
-const removeTask = (index) => {
-for (let i = 0; i < array.length; i++) {
-  const key = localStorage.key(0);
-  if (i == index){
-    
-    const arrayDelete = JSON.parse(localStorage.getItem(key))[i]
-    arrayDelete = new Task()
-    
-    
-  }
-}
 
-}
+localStorage.setItem('+Finder', 'Raul');
+localStorage.setItem('+Counter', '0');
 
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addjob = document.getElementById("job").value;
 
   if (addjob) {
-    const job = new Project(addjob);
-    Store.addJob(job);
-    UI.addTaskToLibrary(job);
+    createKeys(addjob)
     UI.clearField();
   }
 
@@ -55,68 +45,109 @@ function deleteChild(ele) {
   } 
 } 
 
-const iValue = () => {
+const iFinder = () => {
 
-  return localStorage.getItem(localStorage.key(1))
+for (let i = 0; i < localStorage.length; i++) {
+  const key = localStorage.key(i);
+    if(key == '+Finder')
+    return localStorage.getItem(key)
+}
 
 }
 
 
 document.getElementById('sidebar').addEventListener('click', (e) => {
-
-  for (let i = 0; i < array.length; i += 1) {
-    if (e.target.id === array[i].id) {
       const getFormTasks = document.getElementById('task-form');
       const getH1 = document.getElementById('h1')
-      
       const getBtnDanger = document.getElementById('danger-group')
-      getBtnDanger.className = 'visible'
+      getBtnDanger.className = 'd-flex'
+      getFormTasks.className = 'visible'
+
       getH1.value = `${e.target.innerText} Project`
-      getFormTasks.style.setProperty('display', 'inline-block');
-      localStorage.setItem('Finder', i);
+
+      localStorage.setItem('+Finder', e.target.innerText);
       deleteChild("task-list")
-      UI.displayTasks(array[i].task)   
+
+let arr = []
+  for (let i = 0; i < localStorage.length; i++) {
+    const key= localStorage.key(i);
+    if (key == iFinder()) {
+        arr.push(JSON.parse(localStorage.getItem(key)));
+      for (let k = 0; k < arr[0].length; k++) {
+        for (let j = 0; j < localStorage.length; j++) {
+          const key2= localStorage.key(j);
+          if (key2 == arr[0][k]){
+           let task = (JSON.parse(localStorage.getItem(key2))[0]);
+            UI.addTaskToMenu(task, key2)
+
+          }
+        }
+      }
     }
-    e.preventDefault()
-  }
+}
+
+
 });
 
 
-document.getElementById('danger-group').addEventListener('click', (e) => {
-
-  let index = parseInt(iValue())
-  removeTask(index)
-})
 
 
 
-
-
-
-
-document.addEventListener("DOMContentLoaded", UI.displayJobs);
 
 
 document.getElementById('task-form').addEventListener('submit', (e) => {
+ 
+
+  let keyValue = '+'+ iFinder() +  addCounter()
+  
+
   const chore = document.getElementById('chore').value;
   const date = document.getElementById('date').value;
   const importance = document.getElementById('importance').value;
   if (chore && date && importance) {
     const task = new Task(chore, date, importance);
-    Store.addTask(task, localStorage.getItem(localStorage.key(1)));
-    
+      Store.addInside(keyValue,task) 
+      Store.addInside(iFinder(),keyValue)
+
   }
 
 });
 
-
-// document.addEventListener("DOMContentLoaded", UI.displayTasks(array[iValue].task));
-
+document.addEventListener("DOMContentLoaded", UI.displayJobs());
 
 
 
 
 
 
+// var time = "01:32:29";
+// var array = time.split(":");
+// var seconds = (parseInt(array[0], 10) * 60 * 60) + (parseInt(array[1], 10) * 60) + parseInt(array[2], 10)
 
-  
+// console.log(seconds);
+// document.addEventListener("DOMContentLoaded", UI.displayTasks(array[iFinder].task));
+
+
+// createKeys('Raul')
+
+
+// createTasks('Raul')
+// createTasks('Pedro')
+
+// const taskprueba = new Task('caballo', 'date', 'muy')
+
+
+// Store.addInside('Ra1',taskprueba) 
+
+// const loopLocalStorage = (arr) => {
+//   for (let i = 0; i < localStorage.length; i++) {
+//     const key = localStorage.key(i);
+//     if (key != '+Finder') {
+//      console.log(key);
+      
+//     }
+//   }
+
+// }
+
+// loopLocalStorage()

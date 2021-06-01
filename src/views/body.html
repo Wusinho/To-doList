@@ -3,15 +3,15 @@
 <div class="col-8 pt-4 " id="menu">
   
 
-  <div class="input-group invisible d-none " id="danger-group"> 
+  <div class="input-group d-none py-4 " id="danger-group"> 
     <input type="text" class="form-control" id="h1" disabled="false">
     <div class="input-group-append">
       <button class="btn btn-danger" id="btn-danger" type="button" >Delete Project</button>
     </div>
-    </div>
+  </div>
 
 
-  <form id="task-form" class="border-0 post mt-4">
+  <form id="task-form" class="border-0 post py-4 d-none">
     <div class="form-group row">
       <label for="example-text-input" class="col-2">Task</label>
       <div class="col-10">
@@ -44,4 +44,14 @@
   </form>
 
   <div id="task-list"></div>
+  <div class="input-group ">
+    <input type="text" class="form-control" placeholder="chores" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <input type="date" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    <select class="custom-select form-control" id="edit_importance">
+      <option value="Normal">Normal</option>
+      <option value="Very Important">Very Important</option>
+    </select>
+    <button class="btn btn-danger" >DELETE</button>
+
+  </div>
 </div>
