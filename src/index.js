@@ -7,8 +7,10 @@ import navBar from "./modules/navbar";
 import Task from "./modules/task";
 import Store from "./modules/store";
 import UI from "./modules/UI";
-import createKeys from "./modules/createKeys"
+import createKeys from "./modules/createJob"
 import addCounter from "./modules/addCounter"
+import deleteChild from "./modules/deleteChild"
+import iFinder from "./modules/iFinder"
 
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
@@ -31,25 +33,16 @@ document.getElementById("job-form").addEventListener("submit", (e) => {
 
 
 
-function deleteChild(ele) { 
-  let e = document.getElementById(ele); 
-  
-  let child = e.lastElementChild;  
-  while (child) { 
-      e.removeChild(child); 
-      child = e.lastElementChild; 
-  } 
-} 
 
-const iFinder = () => {
+// const iFinder = () => {
 
-for (let i = 0; i < localStorage.length; i++) {
-  const key = localStorage.key(i);
-    if(key == '+Finder')
-    return localStorage.getItem(key)
-}
+// for (let i = 0; i < localStorage.length; i++) {
+//   const key = localStorage.key(i);
+//     if(key == '+Finder')
+//     return localStorage.getItem(key)
+// }
 
-}
+// }
 
 
 document.getElementById('sidebar').addEventListener('click', (e) => {
