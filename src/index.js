@@ -99,10 +99,15 @@ document.addEventListener("DOMContentLoaded", UI.displayJobs());
 
 
  
-const afterInput = (e ) => {
-  console.log(e.target.value)
-  localStorage.setItem(localStorage.getItem('+realName'), e.target.value);
-  // e.preventDefault();
+const afterInputChore = (e ) => {
+  changeChore(localStorage.getItem('+realName'), e.target.value)
+}
+
+const afterInputDate = (e ) => {
+  changeDate(localStorage.getItem('+realName'), e.target.value)
+}
+const afterInputImportance = (e ) => {
+  changeImportance(localStorage.getItem('+realName'), e.target.value)
 }
 
 
@@ -115,24 +120,22 @@ document.getElementById("task-list").addEventListener("click", (e) => {
   const inputVariable = JSON.parse(localStorage.getItem(realName))
 
   if(taskSelect == 'X') {
-(inputVariable[0].chore) = inputVariable
-    con
-    // document.getElementById(e.target.id).addEventListener('input',changeChore(realName, inputVariable))
+    (inputVariable[0].chore) = inputVariable
+document.getElementById(e.target.id).addEventListener('input', afterInputChore )
+    
 
   } else if (taskSelect == '+') {
-(inputVariable[0].date) = inputVariable
-// document.getElementById(e.target.id).addEventListener('input', changeDate(realName, inputVariable))
+    (inputVariable[0].date) = inputVariable
+document.getElementById(e.target.id).addEventListener('input', afterInputDate )
 
-changeDate(realName, inputVariable)
   } else if (taskSelect == '-'){
-(inputVariable[0].importance) = inputVariable
-// document.getElementById(e.target.id).addEventListener('input', changeImportance(realName, inputVariable))
+  (inputVariable[0].importance) = inputVariable
+document.getElementById(e.target.id).addEventListener('input', afterInputImportance )
+
 
   }
     
-  // if (inputVariable) {
-  //   document.getElementById(e.target.id).value = inputVariable
-  // }
+
 
 });
 
@@ -146,11 +149,11 @@ var changeChore = (name, newChore) =>{
 
 };
 
-var changeChore = (name, newDate) =>{
+var changeDate = (name, newDate) =>{
   var existing
 	var existing = localStorage.getItem(name);
   existing = existing ? JSON.parse(existing) : {};
-	existing[0].chore = newDate
+	existing[0].date = newDate
   
 	localStorage.setItem(name, JSON.stringify(existing));
 
@@ -161,7 +164,7 @@ var changeImportance = (name, newImportance) =>{
   var existing
 	var existing = localStorage.getItem(name);
   existing = existing ? JSON.parse(existing) : {};
-	existing[0].chore = newImportance
+	existing[0].importance = newImportance
   
 	localStorage.setItem(name, JSON.stringify(existing));
 
