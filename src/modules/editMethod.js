@@ -21,22 +21,34 @@ const changeImportance = (name, newImportance) => {
 
   localStorage.setItem(name, JSON.stringify(existing));
 };
+const changeDescription = (name, newDescription) => {
+  let existing = localStorage.getItem(name);
+  existing = existing ? JSON.parse(existing) : {};
+  existing[0].description = newDescription;
+
+  localStorage.setItem(name, JSON.stringify(existing));
+};
 
 const afterInputChore = (e) => {
-  changeChore(localStorage.getItem('+realName'), e.target.value);
+  changeChore(localStorage.getItem("+realName"), e.target.value);
 };
 
 const afterInputDate = (e) => {
-  changeDate(localStorage.getItem('+realName'), e.target.value);
+  changeDate(localStorage.getItem("+realName"), e.target.value);
 };
 const afterInputImportance = (e) => {
-  changeImportance(localStorage.getItem('+realName'), e.target.value);
+  changeImportance(localStorage.getItem("+realName"), e.target.value);
+};
+const afterInputDescription = (e) => {
+  changeDescription(localStorage.getItem("+realName"), e.target.value);
 };
 export {
   afterInputChore,
   afterInputDate,
   afterInputImportance,
+  afterInputDescription,
   changeChore,
   changeDate,
   changeImportance,
+  changeDescription,
 };

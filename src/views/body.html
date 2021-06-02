@@ -1,15 +1,14 @@
 <ul class="col-4 m-0 list-group" id="sidebar"></ul>
 
-<div class="col-8 pt-4 " id="menu">
-  
-
-  <div class="input-group d-none py-4 " id="danger-group"> 
-    <input type="text" class="form-control" id="h1" disabled="false">
+<div class="col-8 pt-4" id="menu">
+  <div class="input-group d-none py-4" id="danger-group">
+    <input type="text" class="form-control" id="h1" disabled="false" />
     <div class="input-group-append">
-      <button class="btn btn-danger" id="delete-key" type="button" >Delete Project</button>
+      <button class="btn btn-danger" id="delete-key" type="button">
+        Delete Project
+      </button>
     </div>
   </div>
-
 
   <form id="task-form" class="border-0 post py-4 d-none">
     <div class="form-group row">
@@ -40,9 +39,20 @@
         </select>
       </div>
     </div>
+
+    <div class="form-group row">
+      <label for="example-text-input" class="col-2">Description</label>
+      <div class="col-10">
+        <input
+          class="form-control col-10"
+          type="text"
+          placeholder="Description"
+          id="description"
+        />
+      </div>
+    </div>
     <button type="submit" class="btn btn-success my-4">Submit</button>
   </form>
 
   <div id="task-list"></div>
- 
 </div>
