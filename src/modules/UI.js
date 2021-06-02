@@ -10,10 +10,15 @@ class UI {
     }
   }
 
+  static capitalize = (s) => {
+    if (typeof s !== "string") return "";
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  };
+
   static addTaskToLibrary(task) {
     const list = document.getElementById("sidebar");
     const row = document.createElement("li");
-    row.className = "list-group-item list-group-item-action";
+    row.className = "list-group-item list-group-item-action my-2 border-0";
     row.innerHTML = `${task} `;
     let taskID = task.slice(0, 2);
     row.id = `${taskID}`;
@@ -26,7 +31,7 @@ class UI {
     row.className = "input-group py-1";
 
     const input1 = document.createElement("input");
-    input1.className = "form-control";
+    input1.className = "form-control li-add";
     input1.value = task.chore;
     input1.id = id + "X";
     row.appendChild(input1);

@@ -13,10 +13,66 @@ body {
 }
 
 #menu {
-  background-color: rgb(194, 192, 192);
+  // background-color: rgb(194, 192, 192);
+  background-color: lightgrey;
   height: 100vh;
 }
 
 .list-group-item {
   width: 100%;
+}
+
+#h1 {
+  font-size: 30px;
+  text-align: center;
+}
+
+#h1,
+.list-group-item,
+.li-add {
+  animation: fadein 1s;
+  -webkit-animation: fadein 1s;
+  -moz-animation: fadein 1s;
+  -o-animation: fadein 1s;
+  -ms-animation: fadein 1s;
+}
+
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-moz-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-o-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-ms-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.default-button {
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 7px 12px;
+}
+
+.active-button {
+  background: blue;
+  color: #fff;
+}
+
+.description {
+  margin-top: 20px;
 }
