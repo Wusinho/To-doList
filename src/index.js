@@ -29,18 +29,35 @@ localStorage.setItem("+Counter", "0");
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addjob = document.getElementById("job").value;
   if (addjob) {
-    createKeys(addjob);
+    createKeys(UI.capitalize(addjob));
     UI.clearField();
   }
 });
 
+// function myFunction(target) {
+//   var x = document.getElementById(target);
+//   if (x.style.backgroundColor === "red") {
+//     x.style.backgroundColor = "lightgrey";
+//   } else {
+//     x.style.backgroundColor = "red";
+//   }
+// }
+
 document.getElementById("sidebar").addEventListener("click", (e) => {
+  // console.log(e.currentTarget);
   const getFormTasks = document.getElementById("task-form");
   const getH1 = document.getElementById("h1");
   const getBtnDanger = document.getElementById("danger-group");
+  const getMenu = document.getElementById("menu");
 
+  const liID = e.target.innerText.slice(0, 2);
+
+  const getliID = document.getElementById(liID);
+  console.log(liID);
+  // myFunction(liID);
+  getMenu.style.backgroundColor = "white";
   getBtnDanger.className = "d-flex";
-  getFormTasks.className = "visible";
+  getFormTasks.className = "visible  my-4 ";
 
   getH1.value = `${e.target.innerText} Project`;
 
@@ -48,8 +65,7 @@ document.getElementById("sidebar").addEventListener("click", (e) => {
   deleteChild("task-list");
 
   UI.addTaskToGeneral(iFinder());
-
-  // addTask()
+  e.preventDefault();
 });
 
 document.getElementById("task-form").addEventListener("submit", (e) => {
@@ -108,3 +124,17 @@ document.getElementById("task-list").addEventListener("click", (e) => {
       .addEventListener("input", afterInputDescription);
   }
 });
+
+function myFunction(elem) {
+  var x = document.getElementById("js-description");
+  var description = elem.getAttribute("data-description");
+  x.innerHTML = description;
+
+  var button = document.getElementsByClassName("js-button");
+
+  for (var i = 0; i < button.length; i++) {
+    button[i].classList.remove("active-button");
+  }
+
+  elem.classList.add("active-button");
+}
