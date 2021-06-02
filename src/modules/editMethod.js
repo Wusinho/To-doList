@@ -30,17 +30,17 @@ const changeDescription = (name, newDescription) => {
 };
 
 const afterInputChore = (e) => {
-  changeChore(localStorage.getItem("+realName"), e.target.value);
+  changeChore(localStorage.getItem('+realName'), e.target.value);
 };
 
 const afterInputDate = (e) => {
-  changeDate(localStorage.getItem("+realName"), e.target.value);
+  changeDate(localStorage.getItem('+realName'), e.target.value);
 };
 const afterInputImportance = (e) => {
-  changeImportance(localStorage.getItem("+realName"), e.target.value);
+  changeImportance(localStorage.getItem('+realName'), e.target.value);
 };
 const afterInputDescription = (e) => {
-  changeDescription(localStorage.getItem("+realName"), e.target.value);
+  changeDescription(localStorage.getItem('+realName'), e.target.value);
 };
 export {
   afterInputChore,
