@@ -15,7 +15,6 @@ body {
 #menu {
   // background-color: rgb(194, 192, 192);
   background-color: lightgrey;
-
   height: 100vh;
 }
 
@@ -24,8 +23,8 @@ body {
 }
 
 #h1 {
-  font-size:30px;
-  text-align:center;
+  font-size: 30px;
+  text-align: center;
 }
 
 #h1,
@@ -39,28 +38,28 @@ body {
 }
 
 @keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @-moz-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @-webkit-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @-o-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @-ms-keyframes fadein {
-  0% {opacity: 0;}
-  100% {opacity: 1;}
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .default-button {
