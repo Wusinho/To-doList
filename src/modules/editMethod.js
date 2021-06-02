@@ -47,8 +47,4 @@ export {
   afterInputDate,
   afterInputImportance,
   afterInputDescription,
-  changeChore,
-  changeDate,
-  changeImportance,
-  changeDescription,
 };

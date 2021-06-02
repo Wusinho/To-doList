@@ -15,9 +15,7 @@ import {
   afterInputChore,
   afterInputDate,
   afterInputImportance,
-  changeChore,
-  changeDate,
-  changeImportance,
+  afterInputDescription,
 } from "./modules/editMethod";
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
@@ -61,7 +59,7 @@ document.getElementById("task-form").addEventListener("submit", (e) => {
   const date = document.getElementById("date").value;
   const importance = document.getElementById("importance").value;
   const description = document.getElementById("description").value;
-  if (chore && date && importance) {
+  if (chore && date && importance && description) {
     const task = new Task(chore, date, importance, description);
     Store.addInside(keyValue, task);
     Store.addInside(iFinder(), keyValue);
