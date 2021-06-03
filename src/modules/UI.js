@@ -18,7 +18,7 @@ class UI {
   static addTaskToLibrary(task) {
     const list = document.getElementById("sidebar");
     const row = document.createElement("li");
-    row.className = "list-group-item list-group-item-action my-2 border-0";
+    row.className = "list-group-item list-group-item-action my-2 px-5 border-0";
     row.innerHTML = `${task} `;
     let taskID = task.slice(0, 2);
     row.id = `${taskID}`;
