@@ -9,7 +9,7 @@ You can add or delete projects and you can edit taks directly or delete them.
 
 ## Live View
 
-[Live View](https://compassionate-hypatia-7f30a0.netlify.app/?)
+[Live View](https://lazo-todolist.netlify.app/)
 
 ## Built with
 
