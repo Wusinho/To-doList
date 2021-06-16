@@ -2,11 +2,10 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
-import bodyView from "./modules/body";
-import navBar from "./modules/navbar";
+import bodyView from "./modules/bodyView";
+import navBarView from "./modules/navbarView";
 import Task from "./modules/task";
-import Store from "./modules/store";
-import createKeys from "./modules/createTask";
+import createKeys from "./modules/saveTask";
 import addCounter from "./modules/addCounter";
 import deleteChild from "./modules/deleteChild";
 import iFinder from "./modules/iFinder";
@@ -22,11 +21,11 @@ import {
   clearField,
   addTaskToGeneral,
 } from "./modules/UI"
-
+import {findInLocal,setLocal, getLocal,removeLocal} from "./modules/localStorage"
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
 
-getNavbar.appendChild(navBar());
+getNavbar.appendChild(navBarView());
 getRoot.appendChild(bodyView());
 
 const getSidebar = document.getElementById("sidebar")
@@ -53,7 +52,7 @@ getSidebar.addEventListener("click", (e) => {
 
   getH1.value = `${e.target.innerText} Project`;
 
-  localStorage.setItem("+iFinder", e.target.innerText);
+  setLocal("+iFinder", e.target.innerText);
   deleteChild("task-list");
 
   addTaskToGeneral(iFinder());
@@ -71,20 +70,20 @@ getTaskForm.addEventListener("submit", (e) => {
   const description = document.getElementById("description").value;
   if (chore && date && importance && description) {
     const task = new Task(chore, date, importance, description);
-    Store.inLocal(keyValue, task);
-    Store.inLocal(iFinder(), keyValue);
+    findInLocal(keyValue, task);
+    findInLocal(iFinder(), keyValue);
   }
 });
 
 getDeleteKey.addEventListener("click", (e) => {
-  const deleteKey = localStorage.getItem("+iFinder");
-  localStorage.removeItem(deleteKey);
+  const deleteKey = getLocal("+iFinder");
+  removeLocal(deleteKey);
   location.reload();
 });
 
 getTaskList.addEventListener("click", (e) => {
   const deleteKey = e.target.id;
-  localStorage.removeItem(deleteKey);
+  removeLocal(deleteKey);
 });
 document.addEventListener("DOMContentLoaded", displayProjects());
 
@@ -92,9 +91,9 @@ getTaskList.addEventListener("click", (e) => {
   const eValue = e.target.id;
   const realName = eValue.slice(0, -1);
   const taskSelect = eValue.slice(-1);
-  localStorage.setItem("+realName", realName);
+  setLocal("+realName", realName);
 
-  const inputVariable = JSON.parse(localStorage.getItem(realName));
+  const inputVariable = JSON.parse(getLocal(realName));
 
   if (taskSelect == "X") {
     inputVariable[0].chore = inputVariable;

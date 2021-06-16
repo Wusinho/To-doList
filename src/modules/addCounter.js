@@ -3,11 +3,9 @@
 
 export default () => {
     
-    let counter = new Date()
-
-    let timeToMilli = counter.getMilliseconds();
-    localStorage.setItem('+Counter', timeToMilli)
-    return timeToMilli
+    const randomNumber = Math.floor(Math.random()*(999-100+1)+100);
+    localStorage.setItem('+Counter', randomNumber)
+    return randomNumber
     };
     
   
