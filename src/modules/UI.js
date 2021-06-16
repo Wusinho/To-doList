@@ -1,21 +1,20 @@
 /* eslint-disable */
 
-class UI {
-  static displayJobs() {
+  function displayProjects() {
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key[0] != "+") {
-        UI.addTaskToLibrary(key);
+        addProjectToLibrary(key);
       }
     }
   }
 
-  static capitalize = (s) => {
+  function capitalize (s){
     if (typeof s !== "string") return "";
     return s.charAt(0).toUpperCase() + s.slice(1);
   };
 
-  static addTaskToLibrary(task) {
+  function addProjectToLibrary(task) {
     const list = document.getElementById("sidebar");
     const row = document.createElement("li");
     row.className = "list-group-item list-group-item-action my-2 px-5 border-0";
@@ -25,7 +24,7 @@ class UI {
     list.appendChild(row);
   }
 
-  static addTaskToMenu(task, id) {
+  function addTaskToMenu(task, id) {
     const list = document.getElementById("task-list");
     const row = document.createElement("form");
     row.className = "input-group py-1";
@@ -74,7 +73,7 @@ class UI {
     list.appendChild(row);
   }
 
-  static addTaskToGeneral(finder) {
+  function addTaskToGeneral(finder) {
     let arr = [];
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
@@ -85,7 +84,7 @@ class UI {
             const key2 = localStorage.key(j);
             if (key2 == arr[0][k]) {
               let task = JSON.parse(localStorage.getItem(key2))[0];
-              UI.addTaskToMenu(task, key2);
+              addTaskToMenu(task, key2);
             }
           }
         }
@@ -93,9 +92,13 @@ class UI {
     }
   }
 
-  static clearField() {
+  function clearField() {
     document.getElementById("job").value = "";
   }
-}
 
-export default UI;
+  export {
+    displayProjects,
+    capitalize,
+    clearField,
+    addTaskToGeneral,
+  };

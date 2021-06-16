@@ -6,8 +6,7 @@ import bodyView from "./modules/body";
 import navBar from "./modules/navbar";
 import Task from "./modules/task";
 import Store from "./modules/store";
-import UI from "./modules/UI";
-import createKeys from "./modules/createJob";
+import createKeys from "./modules/createTask";
 import addCounter from "./modules/addCounter";
 import deleteChild from "./modules/deleteChild";
 import iFinder from "./modules/iFinder";
@@ -17,6 +16,12 @@ import {
   afterInputImportance,
   afterInputDescription,
 } from "./modules/editMethod";
+import {
+  displayProjects,
+  capitalize,
+  clearField,
+  addTaskToGeneral,
+} from "./modules/UI"
 
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
@@ -32,8 +37,8 @@ const getTaskList = document.getElementById("task-list")
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addProject = document.getElementById("project").value;
   if (addProject) {
-    createKeys(UI.capitalize(addProject));
-    UI.clearField();
+    createKeys(capitalize(addProject));
+    clearField();
   }
 });
 
@@ -51,9 +56,11 @@ getSidebar.addEventListener("click", (e) => {
   localStorage.setItem("+iFinder", e.target.innerText);
   deleteChild("task-list");
 
-  UI.addTaskToGeneral(iFinder());
+  addTaskToGeneral(iFinder());
   e.preventDefault();
 });
+
+
 
 getTaskForm.addEventListener("submit", (e) => {
   let keyValue = "+" + iFinder() + addCounter();
@@ -79,12 +86,12 @@ getTaskList.addEventListener("click", (e) => {
   const deleteKey = e.target.id;
   localStorage.removeItem(deleteKey);
 });
-document.addEventListener("DOMContentLoaded", UI.displayJobs());
+document.addEventListener("DOMContentLoaded", displayProjects());
 
 getTaskList.addEventListener("click", (e) => {
-  const eVal = e.target.id;
-  const realName = eVal.slice(0, -1);
-  const taskSelect = eVal.slice(-1);
+  const eValue = e.target.id;
+  const realName = eValue.slice(0, -1);
+  const taskSelect = eValue.slice(-1);
   localStorage.setItem("+realName", realName);
 
   const inputVariable = JSON.parse(localStorage.getItem(realName));
