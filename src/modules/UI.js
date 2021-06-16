@@ -1,4 +1,5 @@
 /* eslint-disable */
+import {getLocal} from "./localStorage"
 
   function displayProjects() {
     for (let i = 0; i < localStorage.length; i++) {
@@ -78,12 +79,12 @@
     for (let i = 0; i < localStorage.length; i++) {
       const key = localStorage.key(i);
       if (key == finder) {
-        arr.push(JSON.parse(localStorage.getItem(key)));
+        arr.push(JSON.parse(getLocal(key)));
         for (let k = 0; k < arr[0].length; k++) {
           for (let j = 0; j < localStorage.length; j++) {
             const key2 = localStorage.key(j);
             if (key2 == arr[0][k]) {
-              let task = JSON.parse(localStorage.getItem(key2))[0];
+              let task = JSON.parse(getLocal(key2))[0];
               addTaskToMenu(task, key2);
             }
           }

@@ -28,6 +28,7 @@ const getNavbar = document.getElementById("navbar");
 getNavbar.appendChild(navBarView());
 getRoot.appendChild(bodyView());
 
+// setLocal('+iFinder', 0)
 const getSidebar = document.getElementById("sidebar")
 const getTaskForm = document.getElementById("task-form")
 const getDeleteKey = document.getElementById("delete-key")

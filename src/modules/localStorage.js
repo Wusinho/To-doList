@@ -15,7 +15,7 @@ function setLocal (name, value) {
   localStorage.setItem(name, value);
 }
 function getLocal (name) {
-  localStorage.getItem(name);
+  return localStorage.getItem(name);
 }
 function removeLocal (name) {
   localStorage.removeItem(name);
