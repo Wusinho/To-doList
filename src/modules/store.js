@@ -4,7 +4,7 @@
 class Store {
  
 
-static addInside(name,item) {
+static inLocal(name,item) {
   let existing = localStorage.getItem(name);
   existing = existing ? JSON.parse(existing) : [];
 

@@ -17,47 +17,34 @@ import {
   afterInputImportance,
   afterInputDescription,
 } from "./modules/editMethod";
+
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
 
 getNavbar.appendChild(navBar());
 getRoot.appendChild(bodyView());
 
-localStorage.setItem("+iFinder", "Raul");
-localStorage.setItem("+Counter", "0");
+const getSidebar = document.getElementById("sidebar")
+const getTaskForm = document.getElementById("task-form")
+const getDeleteKey = document.getElementById("delete-key")
+const getTaskList = document.getElementById("task-list")
 
 document.getElementById("job-form").addEventListener("submit", (e) => {
-  const addjob = document.getElementById("job").value;
-  if (addjob) {
-    createKeys(UI.capitalize(addjob));
+  const addProject = document.getElementById("project").value;
+  if (addProject) {
+    createKeys(UI.capitalize(addProject));
     UI.clearField();
   }
 });
 
-// function myFunction(target) {
-//   var x = document.getElementById(target);
-//   if (x.style.backgroundColor === "red") {
-//     x.style.backgroundColor = "lightgrey";
-//   } else {
-//     x.style.backgroundColor = "red";
-//   }
-// }
 
-document.getElementById("sidebar").addEventListener("click", (e) => {
-  // console.log(e.currentTarget);
+getSidebar.addEventListener("click", (e) => {
   const getFormTasks = document.getElementById("task-form");
   const getH1 = document.getElementById("h1");
   const getBtnDanger = document.getElementById("danger-group");
-  const getMenu = document.getElementById("menu");
 
-  const liID = e.target.innerText.slice(0, 2);
-
-  const getliID = document.getElementById(liID);
-  console.log(liID);
-  // myFunction(liID);
-  getMenu.style.backgroundColor = "white";
   getBtnDanger.className = "d-flex";
-  getFormTasks.className = "visible  my-4 ";
+  getFormTasks.className = "d-block ";
 
   getH1.value = `${e.target.innerText} Project`;
 
@@ -68,7 +55,7 @@ document.getElementById("sidebar").addEventListener("click", (e) => {
   e.preventDefault();
 });
 
-document.getElementById("task-form").addEventListener("submit", (e) => {
+getTaskForm.addEventListener("submit", (e) => {
   let keyValue = "+" + iFinder() + addCounter();
 
   const chore = document.getElementById("chore").value;
@@ -77,24 +64,24 @@ document.getElementById("task-form").addEventListener("submit", (e) => {
   const description = document.getElementById("description").value;
   if (chore && date && importance && description) {
     const task = new Task(chore, date, importance, description);
-    Store.addInside(keyValue, task);
-    Store.addInside(iFinder(), keyValue);
+    Store.inLocal(keyValue, task);
+    Store.inLocal(iFinder(), keyValue);
   }
 });
 
-document.getElementById("delete-key").addEventListener("click", (e) => {
+getDeleteKey.addEventListener("click", (e) => {
   const deleteKey = localStorage.getItem("+iFinder");
   localStorage.removeItem(deleteKey);
   location.reload();
 });
 
-document.getElementById("task-list").addEventListener("click", (e) => {
+getTaskList.addEventListener("click", (e) => {
   const deleteKey = e.target.id;
   localStorage.removeItem(deleteKey);
 });
 document.addEventListener("DOMContentLoaded", UI.displayJobs());
 
-document.getElementById("task-list").addEventListener("click", (e) => {
+getTaskList.addEventListener("click", (e) => {
   const eVal = e.target.id;
   const realName = eVal.slice(0, -1);
   const taskSelect = eVal.slice(-1);
@@ -125,16 +112,3 @@ document.getElementById("task-list").addEventListener("click", (e) => {
   }
 });
 
-function myFunction(elem) {
-  var x = document.getElementById("js-description");
-  var description = elem.getAttribute("data-description");
-  x.innerHTML = description;
-
-  var button = document.getElementsByClassName("js-button");
-
-  for (var i = 0; i < button.length; i++) {
-    button[i].classList.remove("active-button");
-  }
-
-  elem.classList.add("active-button");
-}
