@@ -1,25 +1,6 @@
 /* eslint-disable */
 
-
 export default () => {
-    
-
-
-
-        for (let i = 0; i < localStorage.length; i++) {
-          const key = localStorage.key(i);
-            if(key == '+iFinder')
-            return localStorage.getItem(key)
-        }
-        
-
-
-
-
-
-
-
-
+  const finder = localStorage.getItem("+iFinder");
+  if (finder) return finder;
 };
-
-

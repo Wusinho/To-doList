@@ -21,12 +21,14 @@ import {
   capitalize,
   clearField,
   addTaskToGeneralView,
+  addNameToProject,
 } from "./modules/UI";
 import {
   findInLocal,
   setLocal,
   getLocal,
   removeLocal,
+  removeChildren,
 } from "./modules/localStorage";
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
@@ -48,16 +50,16 @@ document.getElementById("job-form").addEventListener("submit", (e) => {
 });
 
 getSidebar.addEventListener("click", (e) => {
+  setLocal("+iFinder", e.target.innerText);
+
   const getFormTasks = document.getElementById("task-form");
-  const getH1 = document.getElementById("h1");
   const getBtnDanger = document.getElementById("danger-group");
 
   getBtnDanger.className = "d-flex";
   getFormTasks.className = "d-block ";
 
-  getH1.value = `${e.target.innerText} Project`;
+  addNameToProject(iFinder());
 
-  setLocal("+iFinder", e.target.innerText);
   deleteChild("task-list");
 
   addTaskToGeneralView(iFinder());
@@ -76,17 +78,21 @@ getTaskForm.addEventListener("submit", (e) => {
     findInLocal(keyValue, task);
     findInLocal(iFinder(), keyValue);
   }
+  e.preventDefault();
 });
 
 getDeleteKey.addEventListener("click", (e) => {
   const deleteKey = getLocal("+iFinder");
+  removeChildren(deleteKey);
   removeLocal(deleteKey);
   location.reload();
 });
 
 getTaskList.addEventListener("click", (e) => {
   const deleteKey = e.target.id;
+
   removeLocal(deleteKey);
+  location.reload();
 });
 document.addEventListener("DOMContentLoaded", displayProjects());
 

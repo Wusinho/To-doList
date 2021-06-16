@@ -17,13 +17,13 @@ function addProjectToLibrary(task) {
   const list = document.getElementById("sidebar");
   const row = document.createElement("li");
   row.className = "list-group-item list-group-item-action my-2 px-5 border-0";
-  row.innerHTML = `${task} `;
+  row.innerHTML = task;
   let taskID = task.slice(0, 2);
-  row.id = `${taskID}`;
+  row.id = taskID;
   list.appendChild(row);
 }
 
-function addTaskToMenu(task, id) {
+function addTasksToProject(task, id) {
   const divElement = document.createElement("div");
   divElement.className = "input-group mb-3";
   divElement.innerHTML = views;
@@ -52,22 +52,34 @@ function addTaskToMenu(task, id) {
   input5.id = id;
 }
 
+function addNameToProject(name) {
+  const getH1 = document.getElementById("h1");
+  getH1.value = `${name} Project`;
+}
+
 function addTaskToGeneralView(finder) {
   const search = JSON.parse(getLocal(finder));
-
+  if (!search) return finder;
   for (let i = 0; i < search.length; i++) {
     for (let j = 0; j < localStorage.length; j++) {
       const keyStorage = localStorage.key(j);
       if (keyStorage == search[i]) {
         const task = JSON.parse(getLocal(keyStorage))[0];
-        addTaskToMenu(task, keyStorage);
+        addTasksToProject(task, keyStorage);
       }
     }
   }
 }
 
 function clearField() {
-  document.getElementById("job").value = "";
+  const clear = document.getElementById("job");
+  if (clear) return (clear.value = "");
 }
 
-export { displayProjects, capitalize, clearField, addTaskToGeneralView };
+export {
+  displayProjects,
+  capitalize,
+  clearField,
+  addTaskToGeneralView,
+  addNameToProject,
+};
