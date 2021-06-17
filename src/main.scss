@@ -14,12 +14,12 @@ body {
 #sidebar {
   background-color: lightgrey;
   height: 100vh;
-
 }
 
 #menu {
   background-color: lightgrey;
   height: 100%;
+  background-color: white;
 }
 
 .list-group-item {
@@ -104,10 +104,6 @@ body {
 
 .description {
   margin-top: 20px;
-}
-
-#menu {
-  background-color: white;
 }
 
 #task-form {
