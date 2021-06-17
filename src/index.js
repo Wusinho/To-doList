@@ -4,9 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
 import bodyView from "./modules/bodyView";
 import navBarView from "./modules/navbarView";
-import tasksView from "./modules/tasksView";
 import Task from "./modules/task";
-import createKeys from "./modules/saveTask";
+import createProject from "./modules/createProject";
 import addCounter from "./modules/addCounter";
 import deleteChild from "./modules/deleteChild";
 import iFinder from "./modules/iFinder";
@@ -44,7 +43,7 @@ const getTaskList = document.getElementById("task-list");
 document.getElementById("job-form").addEventListener("submit", (e) => {
   const addProject = document.getElementById("project").value;
   if (addProject) {
-    createKeys(capitalize(addProject));
+    createProject(capitalize(addProject));
     clearField();
   }
 });
@@ -62,7 +61,11 @@ getSidebar.addEventListener("click", (e) => {
 
   deleteChild("task-list");
 
-  addTaskToGeneralView(iFinder());
+  // addTaskToGeneralView(iFinder());
+  document.addEventListener(
+    "DOMContentLoaded",
+    addTaskToGeneralView(iFinder())
+  );
   e.preventDefault();
 });
 
@@ -76,6 +79,7 @@ getTaskForm.addEventListener("submit", (e) => {
   if (chore && date && importance && description) {
     const task = new Task(chore, date, importance, description);
     findInLocal(keyValue, task);
+
     findInLocal(iFinder(), keyValue);
   }
   e.preventDefault();
@@ -90,9 +94,7 @@ getDeleteKey.addEventListener("click", (e) => {
 
 getTaskList.addEventListener("click", (e) => {
   const deleteKey = e.target.id;
-
   removeLocal(deleteKey);
-  location.reload();
 });
 document.addEventListener("DOMContentLoaded", displayProjects());
 
