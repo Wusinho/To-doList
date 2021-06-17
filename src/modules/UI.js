@@ -64,7 +64,7 @@ function addTaskToGeneralView(finder) {
     for (let j = 0; j < localStorage.length; j++) {
       const keyStorage = localStorage.key(j);
       if (keyStorage == search[i]) {
-        const task = JSON.parse(getLocal(keyStorage))[0];
+        const task = JSON.parse(getLocal(keyStorage));
         addTasksToProject(task, keyStorage);
       }
     }

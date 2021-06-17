@@ -7,6 +7,9 @@ function findInLocal(name, item) {
   localStorage.setItem(name, JSON.stringify(existing));
 }
 
+function setLocalObject(name, value) {
+  localStorage.setItem(name, JSON.stringify(value));
+}
 function setLocal(name, value) {
   localStorage.setItem(name, value);
 }
@@ -31,4 +34,11 @@ function removeChildren(finder) {
   }
 }
 
-export { findInLocal, setLocal, getLocal, removeLocal, removeChildren };
+export {
+  findInLocal,
+  setLocal,
+  getLocal,
+  removeLocal,
+  removeChildren,
+  setLocalObject,
+};

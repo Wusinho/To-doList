@@ -9,12 +9,7 @@ import createProject from "./modules/createProject";
 import addCounter from "./modules/addCounter";
 import deleteChild from "./modules/deleteChild";
 import iFinder from "./modules/iFinder";
-import {
-  afterInputChore,
-  afterInputDate,
-  afterInputImportance,
-  afterInputDescription,
-} from "./modules/editMethod";
+import { afterInput, realDetail } from "./modules/editMethod";
 import {
   displayProjects,
   capitalize,
@@ -28,6 +23,7 @@ import {
   getLocal,
   removeLocal,
   removeChildren,
+  setLocalObject,
 } from "./modules/localStorage";
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
@@ -61,7 +57,6 @@ getSidebar.addEventListener("click", (e) => {
 
   deleteChild("task-list");
 
-  // addTaskToGeneralView(iFinder());
   document.addEventListener(
     "DOMContentLoaded",
     addTaskToGeneralView(iFinder())
@@ -78,7 +73,7 @@ getTaskForm.addEventListener("submit", (e) => {
   const description = capitalize(document.getElementById("description").value);
   if (chore && date && importance && description) {
     const task = new Task(chore, date, importance, description);
-    findInLocal(keyValue, task);
+    setLocalObject(keyValue, task);
 
     findInLocal(iFinder(), keyValue);
   }
@@ -103,28 +98,12 @@ getTaskList.addEventListener("click", (e) => {
   const realName = eValue.slice(0, -1);
   const taskSelect = eValue.slice(-1);
   setLocal("+realName", realName);
+  setLocal("+detail", realDetail(taskSelect));
+
+  const getElement = document.getElementById(eValue);
 
   const inputVariable = JSON.parse(getLocal(realName));
 
-  if (taskSelect == "X") {
-    inputVariable[0].chore = inputVariable;
-    document
-      .getElementById(e.target.id)
-      .addEventListener("input", afterInputChore);
-  } else if (taskSelect == "+") {
-    inputVariable[0].date = inputVariable;
-    document
-      .getElementById(e.target.id)
-      .addEventListener("input", afterInputDate);
-  } else if (taskSelect == "-") {
-    inputVariable[0].importance = inputVariable;
-    document
-      .getElementById(e.target.id)
-      .addEventListener("input", afterInputImportance);
-  } else if (taskSelect == "*") {
-    inputVariable[0].description = inputVariable;
-    document
-      .getElementById(e.target.id)
-      .addEventListener("input", afterInputDescription);
-  }
+  inputVariable[realDetail(taskSelect)] = inputVariable;
+  getElement.addEventListener("input", afterInput);
 });

@@ -2,7 +2,7 @@
 // import "jest-localstorage-mock";
 import createProject from "../modules/createProject";
 
-test("storage.getItem", () => {
+test("storage create Item", () => {
   const name = "House";
   const KEY = createProject(name);
 
