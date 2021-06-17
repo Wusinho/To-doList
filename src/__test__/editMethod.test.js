@@ -1,9 +1,6 @@
 /* eslint-disable */
 
 import { afterInput, realDetail } from "../modules/editMethod";
-import Task from "../modules/task";
-
-// const sample = new Task("fdsfds", "2021-06-29", "Very Important", "buy stuff");
 
 test("get realDetail", () => {
   expect(realDetail("X")).toBe("chore");
