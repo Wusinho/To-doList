@@ -8,14 +8,18 @@ function findInLocal(name, item) {
 }
 
 function setLocalObject(name, value) {
+  if (!name || !value) return;
   localStorage.setItem(name, JSON.stringify(value));
 }
+
 function setLocal(name, value) {
   localStorage.setItem(name, value);
 }
+
 function getLocal(name) {
   return localStorage.getItem(name);
 }
+
 function removeLocal(name) {
   localStorage.removeItem(name);
 }
