@@ -1,5 +1,11 @@
 /* eslint-disable */
-
+// import "jest-localstorage-mock";
 import createProject from "../modules/createProject";
 
-it("Random number greater than 99", () => {});
+test("storage.getItem", () => {
+  const name = "House";
+  const KEY = createProject(name);
+
+  localStorage.setItem(KEY);
+  expect(localStorage.getItem(name)).toBeTruthy();
+});
