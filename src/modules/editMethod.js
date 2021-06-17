@@ -28,4 +28,4 @@ const afterInput = (e) => {
   );
 };
 
-export { afterInput, realDetail };
+export { afterInput, realDetail, editTask };

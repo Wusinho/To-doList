@@ -8,7 +8,7 @@ function findInLocal(name, item) {
 }
 
 function setLocalObject(name, value) {
-  if (!name || !value) return;
+  // if (!name || !value) return;
   localStorage.setItem(name, JSON.stringify(value));
 }
 
