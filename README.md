@@ -44,6 +44,15 @@ Run the following comands in the terminal in the next order:
 - Step 2:
   npm run start
 
+### To run the tests for this project in your local environment
+
+- Step1:
+  $ cd npm run watch
+
+- Step2:
+  press key 'a' from keyboard to run all test
+  $ a
+
 ## Authors
 
 👤 **Heber Lazo**
