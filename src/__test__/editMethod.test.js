@@ -27,9 +27,3 @@ test("creating a chore with a wrong value and chaging it to: Buy Tomato", () => 
 
   expect(object).toBe("Buy Tomato");
 });
-
-// expect(z).not.toBeNull();
-// expect(z).toBeDefined();
-// expect(z).not.toBeUndefined();
-// expect(z).not.toBeTruthy();
-// expect(z).toBeFalsy();
