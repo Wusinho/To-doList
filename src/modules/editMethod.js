@@ -1,50 +1,31 @@
-const changeChore = (name, newChore) => {
+/* eslint-disable */
+
+const editTask = (name, newDescription, detail) => {
   let existing = localStorage.getItem(name);
   existing = existing ? JSON.parse(existing) : {};
-  existing[0].chore = newChore;
+  existing[detail] = newDescription;
 
   localStorage.setItem(name, JSON.stringify(existing));
 };
 
-const changeDate = (name, newDate) => {
-  let existing = localStorage.getItem(name);
-  existing = existing ? JSON.parse(existing) : {};
-  existing[0].date = newDate;
-
-  localStorage.setItem(name, JSON.stringify(existing));
+const realDetail = (val) => {
+  if (val == "X") {
+    return "chore";
+  } else if (val == "+") {
+    return "date";
+  } else if (val == "-") {
+    return "importance";
+  } else if (val == "*") {
+    return "description";
+  }
 };
 
-const changeImportance = (name, newImportance) => {
-  let existing = localStorage.getItem(name);
-  existing = existing ? JSON.parse(existing) : {};
-  existing[0].importance = newImportance;
-
-  localStorage.setItem(name, JSON.stringify(existing));
-};
-const changeDescription = (name, newDescription) => {
-  let existing = localStorage.getItem(name);
-  existing = existing ? JSON.parse(existing) : {};
-  existing[0].description = newDescription;
-
-  localStorage.setItem(name, JSON.stringify(existing));
+const afterInput = (e) => {
+  editTask(
+    localStorage.getItem("+realName"),
+    e.target.value,
+    localStorage.getItem("+detail")
+  );
 };
 
-const afterInputChore = (e) => {
-  changeChore(localStorage.getItem('+realName'), e.target.value);
-};
-
-const afterInputDate = (e) => {
-  changeDate(localStorage.getItem('+realName'), e.target.value);
-};
-const afterInputImportance = (e) => {
-  changeImportance(localStorage.getItem('+realName'), e.target.value);
-};
-const afterInputDescription = (e) => {
-  changeDescription(localStorage.getItem('+realName'), e.target.value);
-};
-export {
-  afterInputChore,
-  afterInputDate,
-  afterInputImportance,
-  afterInputDescription,
-};
+export { afterInput, realDetail, editTask };
