@@ -2,6 +2,7 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
+import inputProject from "./modules/inputProject";
 import bodyView from "./modules/bodyView";
 import navBarView from "./modules/navbarView";
 import Task from "./modules/task";
@@ -28,82 +29,84 @@ import {
 const getRoot = document.getElementById("root");
 const getNavbar = document.getElementById("navbar");
 
-getNavbar.appendChild(navBarView());
-getRoot.appendChild(bodyView());
+// getNavbar.appendChild(navBarView());
+// getRoot.appendChild(bodyView());
 
-const getSidebar = document.getElementById("sidebar");
-const getTaskForm = document.getElementById("task-form");
-const getDeleteKey = document.getElementById("delete-key");
-const getTaskList = document.getElementById("task-list");
+getRoot.appendChild(inputProject());
 
-document.getElementById("job-form").addEventListener("submit", (e) => {
-  const addProject = document.getElementById("project").value;
-  if (addProject) {
-    createProject(capitalize(addProject));
-    clearField();
-  }
-});
+// const getSidebar = document.getElementById("sidebar");
+// const getTaskForm = document.getElementById("task-form");
+// const getDeleteKey = document.getElementById("delete-key");
+// const getTaskList = document.getElementById("task-list");
 
-getSidebar.addEventListener("click", (e) => {
-  setLocal("+iFinder", e.target.innerText);
+// document.getElementById("job-form").addEventListener("submit", (e) => {
+//   const addProject = document.getElementById("project").value;
+//   if (addProject) {
+//     createProject(capitalize(addProject));
+//     clearField();
+//   }
+// });
 
-  const getFormTasks = document.getElementById("task-form");
-  const getBtnDanger = document.getElementById("danger-group");
+// getSidebar.addEventListener("click", (e) => {
+//   setLocal("+iFinder", e.target.innerText);
 
-  getBtnDanger.className = "d-flex";
-  getFormTasks.className = "d-block ";
+//   const getFormTasks = document.getElementById("task-form");
+//   const getBtnDanger = document.getElementById("danger-group");
 
-  addNameToProject(iFinder());
+//   getBtnDanger.className = "d-flex";
+//   getFormTasks.className = "d-block ";
 
-  deleteChild("task-list");
+//   addNameToProject(iFinder());
 
-  document.addEventListener(
-    "DOMContentLoaded",
-    addTaskToGeneralView(iFinder())
-  );
-  e.preventDefault();
-});
+//   deleteChild("task-list");
 
-getTaskForm.addEventListener("submit", (e) => {
-  let keyValue = "+" + iFinder() + addCounter();
+//   document.addEventListener(
+//     "DOMContentLoaded",
+//     addTaskToGeneralView(iFinder())
+//   );
+//   e.preventDefault();
+// });
 
-  const chore = capitalize(document.getElementById("chore").value);
-  const date = document.getElementById("date").value;
-  const importance = document.getElementById("importance").value;
-  const description = capitalize(document.getElementById("description").value);
-  if (chore && date && importance && description) {
-    const task = new Task(chore, date, importance, description);
-    setLocalObject(keyValue, task);
+// getTaskForm.addEventListener("submit", (e) => {
+//   let keyValue = "+" + iFinder() + addCounter();
 
-    findInLocal(iFinder(), keyValue);
-  }
-  e.preventDefault();
-});
+//   const chore = capitalize(document.getElementById("chore").value);
+//   const date = document.getElementById("date").value;
+//   const importance = document.getElementById("importance").value;
+//   const description = capitalize(document.getElementById("description").value);
+//   if (chore && date && importance && description) {
+//     const task = new Task(chore, date, importance, description);
+//     setLocalObject(keyValue, task);
 
-getDeleteKey.addEventListener("click", (e) => {
-  const deleteKey = getLocal("+iFinder");
-  removeChildren(deleteKey);
-  removeLocal(deleteKey);
-  location.reload();
-});
+//     findInLocal(iFinder(), keyValue);
+//   }
+//   e.preventDefault();
+// });
 
-getTaskList.addEventListener("click", (e) => {
-  const deleteKey = e.target.id;
-  removeLocal(deleteKey);
-});
-document.addEventListener("DOMContentLoaded", displayProjects());
+// getDeleteKey.addEventListener("click", (e) => {
+//   const deleteKey = getLocal("+iFinder");
+//   removeChildren(deleteKey);
+//   removeLocal(deleteKey);
+//   location.reload();
+// });
 
-getTaskList.addEventListener("click", (e) => {
-  const eValue = e.target.id;
-  const realName = eValue.slice(0, -1);
-  const taskSelect = eValue.slice(-1);
-  setLocal("+realName", realName);
-  setLocal("+detail", realDetail(taskSelect));
+// getTaskList.addEventListener("click", (e) => {
+//   const deleteKey = e.target.id;
+//   removeLocal(deleteKey);
+// });
+// document.addEventListener("DOMContentLoaded", displayProjects());
 
-  const getElement = document.getElementById(eValue);
+// getTaskList.addEventListener("click", (e) => {
+//   const eValue = e.target.id;
+//   const realName = eValue.slice(0, -1);
+//   const taskSelect = eValue.slice(-1);
+//   setLocal("+realName", realName);
+//   setLocal("+detail", realDetail(taskSelect));
 
-  const inputVariable = JSON.parse(getLocal(realName));
+//   const getElement = document.getElementById(eValue);
 
-  inputVariable[realDetail(taskSelect)] = inputVariable;
-  getElement.addEventListener("input", afterInput);
-});
+//   const inputVariable = JSON.parse(getLocal(realName));
+
+//   inputVariable[realDetail(taskSelect)] = inputVariable;
+//   getElement.addEventListener("input", afterInput);
+// });
