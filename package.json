@@ -2,7 +2,9 @@
   "name": "to-dolist",
   "jest": {
     "resetMocks": false,
-    "setupFiles": ["jest-localstorage-mock"]
+    "setupFiles": [
+      "jest-localstorage-mock"
+    ]
   },
   "version": "1.0.0",
   "description": "",
