@@ -27,86 +27,42 @@ import {
   setLocalObject,
 } from "./modules/localStorage";
 const getRoot = document.getElementById("root");
-const getNavbar = document.getElementById("navbar");
+// const getNavbar = document.getElementById("navbar");
 
 // getNavbar.appendChild(navBarView());
 // getRoot.appendChild(bodyView());
 
-getRoot.appendChild(inputProject());
+inputProject();
 
-// const getSidebar = document.getElementById("sidebar");
-// const getTaskForm = document.getElementById("task-form");
-// const getDeleteKey = document.getElementById("delete-key");
-// const getTaskList = document.getElementById("task-list");
+localStorage.setItem("iFinder", 1);
 
-// document.getElementById("job-form").addEventListener("submit", (e) => {
-//   const addProject = document.getElementById("project").value;
-//   if (addProject) {
-//     createProject(capitalize(addProject));
-//     clearField();
-//   }
-// });
+getRoot.addEventListener("click", (e) => {
+  const inputId = e.target.id;
+  localStorage.setItem("iFinder", inputId);
 
-// getSidebar.addEventListener("click", (e) => {
-//   setLocal("+iFinder", e.target.innerText);
+  const getElement = document.getElementById(inputId);
+  const inputVariable = localStorage.getItem(iFinder());
 
-//   const getFormTasks = document.getElementById("task-form");
-//   const getBtnDanger = document.getElementById("danger-group");
+  findInLocal(inputId, "");
 
-//   getBtnDanger.className = "d-flex";
-//   getFormTasks.className = "d-block ";
+  if (inputVariable) {
+    getElement.value = inputVariable;
+  }
 
-//   addNameToProject(iFinder());
+  getElement.addEventListener("input", afterI);
+});
 
-//   deleteChild("task-list");
+// const getElement = document.getElementById(iFinder());
 
-//   document.addEventListener(
-//     "DOMContentLoaded",
-//     addTaskToGeneralView(iFinder())
-//   );
-//   e.preventDefault();
-// });
+// const inputVariable = localStorage.getItem(e.target.value);
+// if (inputVariable) {
+//   getElement.value = inputVariable;
+// }
 
-// getTaskForm.addEventListener("submit", (e) => {
-//   let keyValue = "+" + iFinder() + addCounter();
+// getElement.addEventListener("input", afterI);
 
-//   const chore = capitalize(document.getElementById("chore").value);
-//   const date = document.getElementById("date").value;
-//   const importance = document.getElementById("importance").value;
-//   const description = capitalize(document.getElementById("description").value);
-//   if (chore && date && importance && description) {
-//     const task = new Task(chore, date, importance, description);
-//     setLocalObject(keyValue, task);
-
-//     findInLocal(iFinder(), keyValue);
-//   }
-//   e.preventDefault();
-// });
-
-// getDeleteKey.addEventListener("click", (e) => {
-//   const deleteKey = getLocal("+iFinder");
-//   removeChildren(deleteKey);
-//   removeLocal(deleteKey);
-//   location.reload();
-// });
-
-// getTaskList.addEventListener("click", (e) => {
-//   const deleteKey = e.target.id;
-//   removeLocal(deleteKey);
-// });
-// document.addEventListener("DOMContentLoaded", displayProjects());
-
-// getTaskList.addEventListener("click", (e) => {
-//   const eValue = e.target.id;
-//   const realName = eValue.slice(0, -1);
-//   const taskSelect = eValue.slice(-1);
-//   setLocal("+realName", realName);
-//   setLocal("+detail", realDetail(taskSelect));
-
-//   const getElement = document.getElementById(eValue);
-
-//   const inputVariable = JSON.parse(getLocal(realName));
-
-//   inputVariable[realDetail(taskSelect)] = inputVariable;
-//   getElement.addEventListener("input", afterInput);
-// });
+function afterI(e) {
+  if (iFinder()) {
+    localStorage.setItem(iFidner(), e.target.value);
+  }
+}

@@ -3,9 +3,8 @@
 import views from "../views/inputProject.html";
 
 export default () => {
-  const divElement = document.createElement("div");
+  const getElement = document.getElementById("root");
+  getElement.innerHTML = views;
 
-  divElement.innerHTML = views;
-
-  return divElement;
+  return getElement;
 };
