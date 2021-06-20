@@ -23,12 +23,12 @@ function addProjectToLibrary(task) {
   list.appendChild(row);
 }
 
-function addTasksToProject(task, id) {
+function addTasksToProject(task, id, parent) {
   const divElement = document.createElement("div");
-  divElement.className = "input-group mb-3";
+  divElement.className = "input-group m-0";
   divElement.innerHTML = views;
 
-  const list = document.getElementById("task-list");
+  const list = document.getElementById(parent).parentElement;
   list.appendChild(divElement);
 
   const input1 = document.getElementById("input1");
