@@ -1,13 +1,19 @@
 /* eslint-disable */
-import { getLocal } from "./localStorage";
+import { getLocal, getLocalObject } from "./localStorage";
 import views from "../views/tasks.html";
 
-function displayProjects() {
-  Object.keys(localStorage).forEach((val) => {
-    if (val[0] != "+") addProjectToLibrary(val);
-  });
-}
+// function displayProjects() {
+//   Object.keys(localStorage).forEach((val) => {
+//     if (val[0] != "+") addProjectToLibrary(val);
+//   });
+// }
 
+function displayProjects() {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (key) document.getElementById(key).value = getLocalObject(key).chore;
+  }
+}
 function capitalize(s) {
   if (typeof s !== "string") return "";
   return s.charAt(0).toUpperCase() + s.slice(1);
@@ -25,6 +31,7 @@ function addProjectToLibrary(task) {
 
 function addTasksToProject(task, id, parent) {
   const divElement = document.createElement("div");
+  divElement.id = `+${id}`;
   divElement.className = "input-group m-0";
   divElement.innerHTML = views;
 

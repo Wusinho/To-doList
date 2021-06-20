@@ -20,6 +20,10 @@ function getLocal(name) {
   return localStorage.getItem(name);
 }
 
+function getLocalObject(name) {
+  return JSON.parse(localStorage.getItem(name));
+}
+
 function removeLocal(name) {
   localStorage.removeItem(name);
 }
@@ -45,4 +49,5 @@ export {
   removeLocal,
   removeChildren,
   setLocalObject,
+  getLocalObject,
 };

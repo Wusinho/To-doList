@@ -1,9 +1,9 @@
 /* eslint-disable */
 import createId from "./createId";
 class Project {
-  constructor(name) {
-    this.chore = name;
-    this.id = createId();
+  constructor(ID, name) {
+    this.chore = name || "";
+    this.id = ID;
   }
 }
 export default Project;

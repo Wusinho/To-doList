@@ -1,9 +1,9 @@
 /* eslint-disable */
 
-const editTask = (name, newDescription, detail) => {
+const editMethod = (name, newDescription) => {
   let existing = localStorage.getItem(name);
   existing = existing ? JSON.parse(existing) : {};
-  existing[detail] = newDescription;
+  existing.chore = newDescription;
 
   localStorage.setItem(name, JSON.stringify(existing));
 };
@@ -20,12 +20,16 @@ const realDetail = (val) => {
   }
 };
 
-const afterInput = (e) => {
-  editTask(
-    localStorage.getItem("+realName"),
-    e.target.value,
-    localStorage.getItem("+detail")
-  );
+// const afterInput = (e) => {
+//   editTask(
+//     localStorage.getItem("+realName"),
+//     e.target.value,
+//     localStorage.getItem("+detail")
+//   );
+// };
+
+const getInput = (e) => {
+  editMethod(e.target.id, e.target.value);
 };
 
-export { afterInput, realDetail, editTask };
+export { getInput, realDetail };
