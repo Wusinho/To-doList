@@ -46,11 +46,16 @@ body{
   //   max-width: 200px ;
   // }
   .form-control {
-  max-width: 120px ;
+  max-width: 200px;
   .form-control:second-child{
     max-width: 200px ;
 
   }
   }
   
+}
+
+.inputContainer{
+  border-bottom: 1.5px solid #abd0ae;
+
 }
