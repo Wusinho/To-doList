@@ -2,7 +2,7 @@
 import createId from "./createId";
 class Project {
   constructor(ID, name) {
-    this.chore = name || "";
+    this.project = name || "";
     this.id = ID;
   }
 }

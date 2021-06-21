@@ -1,22 +1,29 @@
 /* eslint-disable */
-import { getLocal, getLocalObject } from "./localStorage";
 import views from "../views/tasks.html";
-
-// function displayProjects() {
-//   Object.keys(localStorage).forEach((val) => {
-//     if (val[0] != "+") addProjectToLibrary(val);
-//   });
-// }
+import Task from "./task";
+import addCounter from "./addCounter";
+import { setLocalObject, getLocalObject, removeLocal } from "./localStorage";
 
 function displayProjects() {
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
-    if (key) document.getElementById(key).value = getLocalObject(key).chore;
+
+    if (key[0] != "+" && key[0] != "-")
+      document.getElementById(key).value = getLocalObject(key).project;
   }
 }
-function capitalize(s) {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
+
+function displayTaks() {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+
+    if (key[0] == "-") {
+      createFilledChildInputs(key, getLocalObject(key), key[1]);
+      if (getLocalObject(key).chore == "") {
+        removeLocal(key);
+      }
+    }
+  }
 }
 
 function addProjectToLibrary(task) {
@@ -29,64 +36,64 @@ function addProjectToLibrary(task) {
   list.appendChild(row);
 }
 
-function addTasksToProject(task, id, parent) {
-  const divElement = document.createElement("div");
-  divElement.id = `+${id}`;
-  divElement.className = "input-group m-0";
-  divElement.innerHTML = views;
+function addTasksToProject(ID) {
+  const newTask = new Task();
 
-  const list = document.getElementById(parent).parentElement;
-  list.appendChild(divElement);
+  const getChildInput = document.getElementById(`children${ID}`);
+  const token = addCounter();
+  const keyValue = "-" + ID + token;
+  setLocalObject(keyValue, newTask);
+
+  const divElement = document.createElement("div");
+  divElement.id = `-${ID}`;
+  divElement.className = "input-group childInput";
+  divElement.innerHTML = views;
+  getChildInput.appendChild(divElement);
 
   const input1 = document.getElementById("input1");
   const input2 = document.getElementById("input2");
   const input3 = document.getElementById("input3");
   const input4 = document.getElementById("input4");
-  const input5 = document.getElementById("input5");
 
-  input1.value = task.chore;
-  input1.id = id + "X";
+  input1.value = newTask.chore;
+  input1.id = "-" + ID + token + "#";
 
-  input2.value = task.date;
-  input2.id = id + "+";
+  input2.value = newTask.date;
+  input2.id = "-" + ID + token + "%";
 
-  input3.value = task.importance;
-  input3.id = id + "-";
+  input3.value = newTask.importance;
+  input3.id = "-" + ID + token + "-";
 
-  input4.value = task.description;
-  input4.id = id + "*";
-
-  input5.id = id;
+  input4.value = newTask.description;
+  input4.id = "-" + ID + token + "*";
+  return divElement;
 }
 
-function addNameToProject(name) {
-  const getH1 = document.getElementById("h1");
-  getH1.value = `${name} Project`;
+function createFilledChildInputs(ID, newTask, childrenID) {
+  const getChildInput = document.getElementById(`children${childrenID}`);
+  const divElement = document.createElement("div");
+  divElement.id = `+${ID}`;
+  divElement.className = "input-group childInput";
+  divElement.innerHTML = views;
+  getChildInput.appendChild(divElement);
+
+  const input1 = document.getElementById("input1");
+  const input2 = document.getElementById("input2");
+  const input3 = document.getElementById("input3");
+  const input4 = document.getElementById("input4");
+
+  input1.value = newTask.chore;
+  input1.id = ID + "#";
+
+  input2.value = newTask.date;
+  input2.id = ID + "%";
+
+  input3.value = newTask.importance;
+  input3.id = ID + "-";
+
+  input4.value = newTask.description;
+  input4.id = ID + "*";
+  return divElement;
 }
 
-function addTaskToGeneralView(finder) {
-  const search = JSON.parse(getLocal(finder));
-  if (!search) return finder;
-  for (let i = 0; i < search.length; i++) {
-    for (let j = 0; j < localStorage.length; j++) {
-      const keyStorage = localStorage.key(j);
-      if (keyStorage == search[i]) {
-        const task = JSON.parse(getLocal(keyStorage));
-        addTasksToProject(task, keyStorage);
-      }
-    }
-  }
-}
-
-function clearField() {
-  const clear = document.getElementById("job");
-  if (clear) return (clear.value = "");
-}
-
-export {
-  displayProjects,
-  capitalize,
-  clearField,
-  addTaskToGeneralView,
-  addNameToProject,
-};
+export { displayProjects, addTasksToProject, displayTaks };

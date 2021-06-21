@@ -2,50 +2,68 @@
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./main.scss";
-import inputProject from "./modules/inputProject";
-import taskView from "./modules/tasksView";
-import createId from "./modules/createId";
+import createInputParent from "./modules/inputProject";
 import Task from "./modules/task";
 import Project from "./modules/project";
-// import createProject from "./modules/createProject";
+import iFinder from "./modules/iFinder";
 import addCounter from "./modules/addCounter";
-// import deleteChild from "./modules/deleteChild";
-import { getInput, realDetail } from "./modules/editMethod";
+import {
+  getInput,
+  realDetail,
+  getChildInput,
+  afterInput,
+} from "./modules/editMethod";
 import {
   displayProjects,
-  capitalize,
-  clearField,
-  addTaskToGeneralView,
-  addNameToProject,
+  addTasksToProject,
+  displayTaks,
+  removeEmptyTasks,
 } from "./modules/UI";
-import {
-  findInLocal,
-  setLocal,
-  getLocal,
-  removeLocal,
-  removeChildren,
-  setLocalObject,
-  getLocalObject,
-} from "./modules/localStorage";
+import { setLocal, getLocal, setLocalObject } from "./modules/localStorage";
 const getRoot = document.getElementById("root");
 
-inputProject();
+createInputParent();
+const getParentInput = document.getElementsByClassName("parent");
+const getChildrenInput = document.getElementsByClassName("children");
 
-getRoot.addEventListener("click", (e) => {
-  const inputId = e.target.id;
+for (var i = 0; i < getChildrenInput.length; i++) {
+  getChildrenInput[i].addEventListener("click", (e) => {
+    if (!e.target) return;
+    const eValue = e.target.id;
+    const realName = eValue.slice(0, -1);
+    const taskSelect = eValue.slice(-1);
+    setLocal("+realName", realName);
+    setLocal("+detail", realDetail(taskSelect));
 
-  const getElement = document.getElementById(inputId);
+    const getElement = document.getElementById(eValue);
 
-  if (!getLocal(inputId)) {
-    const newProject = new Project(inputId);
-    setLocalObject(inputId, newProject);
-  }
+    const inputVariable = JSON.parse(getLocal(realName));
 
-  const inputVariable = JSON.parse(getLocal(inputId));
+    inputVariable[realDetail(taskSelect)] = inputVariable;
+    getElement.addEventListener("input", afterInput);
+  });
+}
 
-  if (inputVariable) inputVariable.chore = inputVariable;
+for (var i = 0; i < getParentInput.length; i++) {
+  getParentInput[i].addEventListener("click", (e) => {
+    if (!e.target) return;
+    const inputId = e.target.id;
 
-  getElement.addEventListener("input", getInput);
-});
+    const getElement = document.getElementById(inputId);
+
+    if (!getElement.value) {
+      const newProject = new Project(inputId);
+      setLocalObject(inputId, newProject);
+      addTasksToProject(e.target.id);
+    }
+
+    const inputVariable = JSON.parse(getLocal(inputId));
+
+    if (inputVariable) inputVariable.chore = inputVariable;
+
+    getElement.addEventListener("input", getInput);
+  });
+}
 
 displayProjects();
+displayTaks();

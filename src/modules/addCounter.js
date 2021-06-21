@@ -1,6 +1,6 @@
 /* eslint-disable */
 
-export default (name) => {
+export default () => {
   const randomNumber = Math.floor(Math.random() * (999 - 100 + 1) + 100);
-  return `+${name}${randomNumber}`;
+  return randomNumber;
 };

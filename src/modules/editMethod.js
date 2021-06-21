@@ -1,17 +1,25 @@
 /* eslint-disable */
 
-const editMethod = (name, newDescription) => {
+const editTaskMethod = (name, newDescription, property) => {
   let existing = localStorage.getItem(name);
   existing = existing ? JSON.parse(existing) : {};
-  existing.chore = newDescription;
+  existing[property] = newDescription;
+
+  localStorage.setItem(name, JSON.stringify(existing));
+};
+
+const editProjectMethod = (name, newDescription) => {
+  let existing = localStorage.getItem(name);
+  existing = existing ? JSON.parse(existing) : {};
+  existing.project = newDescription;
 
   localStorage.setItem(name, JSON.stringify(existing));
 };
 
 const realDetail = (val) => {
-  if (val == "X") {
+  if (val == "#") {
     return "chore";
-  } else if (val == "+") {
+  } else if (val == "%") {
     return "date";
   } else if (val == "-") {
     return "importance";
@@ -20,16 +28,20 @@ const realDetail = (val) => {
   }
 };
 
-// const afterInput = (e) => {
-//   editTask(
-//     localStorage.getItem("+realName"),
-//     e.target.value,
-//     localStorage.getItem("+detail")
-//   );
-// };
-
-const getInput = (e) => {
-  editMethod(e.target.id, e.target.value);
+const afterInput = (e) => {
+  editTaskMethod(
+    localStorage.getItem("+realName"),
+    e.target.value,
+    localStorage.getItem("+detail")
+  );
 };
 
-export { getInput, realDetail };
+const getInput = (e) => {
+  editProjectMethod(e.target.id, e.target.value);
+};
+
+const getChildInput = (e) => {
+  editTaskMethod(e.target.id, e.target.value);
+};
+
+export { getInput, realDetail, getChildInput, afterInput };
