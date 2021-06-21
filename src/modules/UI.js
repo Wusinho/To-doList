@@ -19,9 +19,7 @@ function displayTaks() {
 
     if (key[0] == "-") {
       createFilledChildInputs(key, getLocalObject(key), key[1]);
-      if (getLocalObject(key).chore == "") {
-        removeLocal(key);
-      }
+      if (getLocalObject(key).chore == "") removeLocal(key);
     }
   }
 }
