@@ -5,8 +5,8 @@ body {
 }
 
 .container {
-  border-radius: 5px;
-  box-shadow: 10px 10px 24px -13px rgba(0, 0, 0, 0.75);
+  border-radius: 6px;
+  box-shadow: 11px 10px 24px -13px rgba(0, 0, 0, 0.75);
 }
 
 .form-control {
@@ -33,7 +33,6 @@ body {
   .form-control {
     max-width: 200px;
   }
-
 }
 
 .inputContainer {
@@ -63,9 +62,4 @@ body {
   border: none;
   background-color: #fff2a3;
   outline: none;
-}
-
-.children>.input-group {
-  // border-bottom: 1.5px solid #abd0ae;
-
 }
