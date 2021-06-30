@@ -18,7 +18,8 @@ body {
 }
 
 .container,
-.form-control {
+.form-control,
+.form-control:focus {
   background-color: #fff2a3;
 }
 
