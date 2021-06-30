@@ -41,19 +41,32 @@ for (var i = 0; i < getChildrenInput.length; i++) {
 
     inputVariable[realDetail(taskSelect)] = inputVariable;
     getElement.addEventListener("input", afterInput);
+
+
+    removeEmptyTasks()
+
   });
 }
+
+const getEmptyClass = document.querySelectorAll('.form-control');
+for (let i = 0; i < getEmptyClass.length; i++) {
+  console.log(getEmptyClass[i])
+  
+}
+// console.log(getChildrenInput)
 
 for (var i = 0; i < getParentInput.length; i++) {
   getParentInput[i].addEventListener("click", (e) => {
     if (!e.target) return;
     const inputId = e.target.id;
-
+0
     const getElement = document.getElementById(inputId);
 
     if (!getElement.value) {
       const newProject = new Project(inputId);
       setLocalObject(inputId, newProject);
+      addTasksToProject(e.target.id);
+    } else if (getElement.value){
       addTasksToProject(e.target.id);
     }
 
@@ -62,6 +75,8 @@ for (var i = 0; i < getParentInput.length; i++) {
     if (inputVariable) inputVariable.chore = inputVariable;
 
     getElement.addEventListener("input", getInput);
+    removeEmptyTasks()
+
   });
 }
 

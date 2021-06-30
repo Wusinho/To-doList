@@ -24,6 +24,19 @@ function displayTaks() {
   }
 }
 
+function removeEmptyTasks() {
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+
+    if (key[0] == "-") {
+     getLocalObject(key).chore == "" ? removeLocal(key) : null
+    }
+  }
+}
+
+
+
+
 function addProjectToLibrary(task) {
   const list = document.getElementById("sidebar");
   const row = document.createElement("li");
@@ -94,4 +107,4 @@ function createFilledChildInputs(ID, newTask, childrenID) {
   return divElement;
 }
 
-export { displayProjects, addTasksToProject, displayTaks };
+export { displayProjects, addTasksToProject, displayTaks, removeEmptyTasks };

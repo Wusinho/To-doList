@@ -1,21 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=Pangolin&display=swap');
-body{
+
+body {
   font-family: 'Pangolin', cursive;
 }
+
 .container {
   border-radius: 5px;
 }
-// .children {
-//   margin-left: 20px;
-// }
 
-.form-control{
+.form-control {
   border: none;
 }
 
-
 .children {
-  border-bottom: 1.5px solid #abd0ae;
+  // border-bottom: 1.5px solid #abd0ae;
 }
 
 .container,
@@ -24,38 +22,49 @@ body{
   background-color: #fff2a3;
 }
 
-.topBox{
-  width:100%;
-  height: 70px;
-  border-bottom: 1.5px solid #abd0ae;
-}
 .parent,
 .childInput {
   margin-left: 90px;
   border-left: 2px solid #e6c3bd;
 }
 
-.smallBox{
-  width:92px;
-  height:70px;
-  border-right: 2px solid #e6c3bd;;
-}
 
-.children{
-  // .form-control:second-child {
-  //   max-width: 200px ;
-  // }
-  .form-control {
-  max-width: 200px;
-  .form-control:second-child{
-    max-width: 200px ;
 
-  }
-  }
-  
-}
+// .children {
+//   .form-control {
+//     // max-width: 200px;
 
-.inputContainer{
+//     .form-control:second-child {
+//       // max-width: 200px;
+//     }
+//   }
+
+// }
+
+.inputContainer {
   border-bottom: 1.5px solid #abd0ae;
+}
 
+.input-group {
+  // border-bottom: 1.5px solid #abd0ae;
+  min-width: 0;
+  width: auto;
+}
+
+.topBox {
+  width: 100%;
+  height: 70px;
+  border-bottom: 1.5px solid #abd0ae;
+}
+
+.smallBox {
+  width: 92px;
+  height: 70px;
+  border-right: 2px solid #e6c3bd;
+}
+
+.project {
+  width: 100%;
+  border: none;
+  background-color: #fff2a3;
 }
