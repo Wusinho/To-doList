@@ -13,7 +13,7 @@ body {
 }
 
 .children {
-  // border-bottom: 1.5px solid #abd0ae;
+  border-bottom: 1.5px solid #abd0ae;
 }
 
 .container,
@@ -30,23 +30,19 @@ body {
 
 
 
-// .children {
-//   .form-control {
-//     // max-width: 200px;
+.children {
+  .form-control {
+    max-width: 200px;
+  }
 
-//     .form-control:second-child {
-//       // max-width: 200px;
-//     }
-//   }
-
-// }
+}
 
 .inputContainer {
   border-bottom: 1.5px solid #abd0ae;
 }
 
 .input-group {
-  // border-bottom: 1.5px solid #abd0ae;
+  border-bottom: 1.5px solid #abd0ae;
   min-width: 0;
   width: auto;
 }
@@ -67,4 +63,10 @@ body {
   width: 100%;
   border: none;
   background-color: #fff2a3;
+  outline: none;
+}
+
+.children>.input-group {
+  // border-bottom: 1.5px solid #abd0ae;
+
 }
