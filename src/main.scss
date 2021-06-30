@@ -6,6 +6,7 @@ body {
 
 .container {
   border-radius: 5px;
+  box-shadow: 10px 10px 24px -13px rgba(0, 0, 0, 0.75);
 }
 
 .form-control {
@@ -17,8 +18,7 @@ body {
 }
 
 .container,
-.form-control,
-.form-control:focus {
+.form-control {
   background-color: #fff2a3;
 }
 
@@ -27,8 +27,6 @@ body {
   margin-left: 90px;
   border-left: 2px solid #e6c3bd;
 }
-
-
 
 .children {
   .form-control {
