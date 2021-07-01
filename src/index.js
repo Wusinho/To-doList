@@ -1,4 +1,5 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './reset.scss'
 import './main.scss';
 import createInputParent from './modules/inputProject';
 import Project from './modules/project';
@@ -6,6 +7,7 @@ import {
   getInput,
   realDetail,
   afterInput,
+  editTaskMethod
 } from './modules/editMethod';
 import {
   displayProjects,
@@ -27,7 +29,6 @@ for (let i = 0; i < getChildrenInput.length; i += 1) {
     const taskSelect = eValue.slice(-1);
     setLocal('+realName', realName);
     setLocal('+detail', realDetail(taskSelect));
-
     const getElement = document.getElementById(eValue);
 
     const inputVariable = JSON.parse(getLocal(realName));
@@ -35,7 +36,17 @@ for (let i = 0; i < getChildrenInput.length; i += 1) {
     inputVariable[realDetail(taskSelect)] = inputVariable;
     getElement.addEventListener('input', afterInput);
 
-    removeEmptyTasks();
+    const checkbox = document.getElementById(eValue);
+
+    checkbox.addEventListener('change', e => {
+
+      if(e.target.checked){
+        console.log('checked')
+        editTaskMethod(realName, 'VIP', realDetail(taskSelect))
+      } 
+  
+  });
+    
   });
 }
 

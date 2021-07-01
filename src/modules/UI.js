@@ -66,16 +66,16 @@ function addTasksToProject(ID) {
   const input3 = document.getElementById("input3");
   const input4 = document.getElementById("input4");
 
-  input1.value = newTask.chore;
+  input1.value = newTask.chore || "";
   input1.id = "-" + ID + token + "#";
 
-  input2.value = newTask.date;
+  input2.value = newTask.date || "";
   input2.id = "-" + ID + token + "%";
 
-  input3.value = newTask.importance;
+  input3.value = newTask.importance || "";
   input3.id = "-" + ID + token + "-";
 
-  input4.value = newTask.description;
+  input4.value = newTask.description || '';
   input4.id = "-" + ID + token + "*";
   return divElement;
 }
@@ -99,8 +99,9 @@ function createFilledChildInputs(ID, newTask, childrenID) {
   input2.value = newTask.date;
   input2.id = ID + "%";
 
-  input3.value = newTask.importance;
-  input3.id = ID + "-";
+    input3.checked = newTask.importance
+    input3.id = ID + "-";
+  
 
   input4.value = newTask.description;
   input4.id = ID + "*";

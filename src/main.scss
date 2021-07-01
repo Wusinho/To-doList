@@ -57,13 +57,19 @@ body {
   border-right: 2px solid #e6c3bd;
 }
 
-.project {
-  width: 100%;
-  border: none;
-  background-color: #fff2a3;
-  outline: none;
-}
-
 input {
   text-shadow: 1px 1px 1px grey;
+}
+
+.form-check {
+  // padding-top: 5px;
+  background-color: #fff2a3;
+  border: none;
+  // width: 100px;
+  // padding-left: 5px
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+  margin-left: 0px;
+  padding-top: 5px;
 }

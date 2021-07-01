@@ -44,4 +44,4 @@ const getChildInput = (e) => {
   editTaskMethod(e.target.id, e.target.value);
 };
 
-export { getInput, realDetail, getChildInput, afterInput };
+export { getInput, realDetail, getChildInput, afterInput,editTaskMethod };
